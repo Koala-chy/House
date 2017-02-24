@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="gbk">
+    <title></title>
+    <style>
+        .pc .num {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+
+        }
+        .pc .current {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+            background-color: #458FCE;
+
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form action=""method="get">
+        <input type="text"name="count"placeholder="请输入问题"value="">
+        <input type="submit"value="搜索">
+    </form>
+</div>
+
+    <h2 style="display: inline"><a href="/Home/Lawyer/questions">在线咨询</a></h2>
+<table border="0">
+
+    <volist id="row" name="list">
+        <tr >
+            <td>Q</td>
+            <td width="800px"><a href="/Home/Lawyer/reads/id/{$row.id}">{$row.problem}</a></td>
+            <td>{$row.ptime|date='Y-m-d H:i:s',###}</td>
+
+        </tr>
+        <tr style=""><td align="right"COLSPAN="2">{$row.cc}条回答</td></tr>
+    </volist>
+
+</table>
+<div class="pc">{$pager->show()}</div>
+</body>
+</html>

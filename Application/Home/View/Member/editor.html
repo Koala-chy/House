@@ -1,0 +1,115 @@
+<div style="background-color: rgb(245,245,245)">
+    <div class="edi_int">
+        亲爱的【{$Think.session.username}】,填写真实资料我们会妥善保管您的信息，我们还会
+        为您提供个性的区域服务，您参加找房网旗下网站各类活动时，我们能够更方便地与您取得联系。
+    </div>
+    <div class="edi_basic">
+        <div class="edi_second">
+            <div class="edi_title">
+                <span>基本信息</span>
+                <!--<span>安全设置</span>-->
+                <!--<span>绑定设置</span>-->
+            </div>
+            <!--<img src="/Uploads/2016-10-28/5813060f2dff3.jpg">-->
+            <div style="clear: both"></div>
+                <div class="edi_info">
+                    <script>
+                        $(function(){
+                            $(document).ready(function(){
+                                $(".i_1").load(function(){
+                                    var url = $(".i_1" ).contents().find("#pic").html();
+                                    console.log(url);
+                                    if(url){
+                                        $('.edi_img').attr('src',url);
+                                    }
+                                })
+                            })
+                        });
+                    </script>
+                    <if condition="$Think.session.rank eq 1">
+                        <!--普通用户-->
+                        当前头像：<br>
+                        <eq name="data.user_photo" value="">
+                            <img src="IMAPATH/u-pic.png" class="edi_img"  width="100px">
+                            <else/>
+                            <img src="/../Uploads/{$data['user_photo']}" class="edi_img"  width="100px">
+                        </eq>
+                        <form action="sub_file" method="post" enctype="multipart/form-data" target="upload_target">
+                            <div class="edi_photo">
+                                <span class="sub_photo">上传头像</span>
+                                <input type="file" name="user_photo" class="edi_file">
+                                <input type="submit" value="上传" class="edi_file_s">
+                                <iframe class="i_1" name="upload_target" style="display: none">
+
+                                </iframe>
+                            </div>
+                        </form>
+                        <form method="post" action="save">
+                            <div class="edi_name">
+                                用户名：<input type="text" name="user_name" value="{$Think.session.username}">
+                            </div>
+                            <div class="edi_name">
+                                年龄：<input type="text" name="user_age" value="{$data['user_age']}">
+                            </div>
+                            <div class="edi_name">
+                                职业：<input type="text" name="user_work" value="{$data['user_work']}" >
+                            </div>
+                            <div class="edi_sex">
+                                性别：<input type="radio" name="user_sex" value="男" {:$data['user_sex']=="男"?"checked":""}>男
+                                <input type="radio" name="user_sex" value="女" {:$data['user_sex']=="女"?"checked":""}>女
+                            </div>
+                            <div class="edi_name">
+                                所在城市：<input type="text" name="user_city" value="{$data['user_city']}">
+                            </div>
+                            <div class="edi_name">
+                                真实姓名：<input type="text" name="user_realname" value="{$data['user_realname']}">
+                            </div>
+                            <input type="submit" value="保存" class="edi_sub">
+                        </form>
+                        <elseif condition="$Think.session.rank eq 2"/>
+                        <!--经纪人-->
+                        当前头像：<br>
+                        <eq name="data.mid_photo" value="">
+                            <img src="IMAPATH/u-pic.png" class="edi_img"  width="100px">
+                            <else/>
+                            <img src="/../Uploads/{$data['mid_photo']}" class="edi_img"  width="100px">
+                        </eq>
+                        <form action="sub_file" method="post" enctype="multipart/form-data" target="upload_target">
+                            <div class="edi_photo">
+                                <span class="sub_photo">上传头像</span>
+                                <input type="file" name="user_photo" class="edi_file">
+                                <input type="submit" value="上传" class="edi_file_s">
+                                <iframe class="i_1" name="upload_target" style="display: none">
+
+                                </iframe>
+                            </div>
+                        </form>
+                        <form method="post" action="save">
+                            <!--<div class="edi_name">-->
+                                <!--&lt;!&ndash;用户名：<input type="text" name="user_name" value="{$Think.session.username}">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<span>用户名只能修改一次</span>&ndash;&gt;-->
+                            <!--</div>-->
+                            <div class="edi_name">
+                                年龄：<input type="text" name="mid_age" value="{$data['mid_age']}">
+                            </div>
+                            <div class="edi_name">
+                                职业：<input type="text" name="mid_work" value="{$data['mid_work']}" >
+                            </div>
+                            <div class="edi_sex">
+                                性别：<input type="radio" name="mid_sex" value="男" {:$data['mid_sex']=="男"?"checked":""}>男
+                                <input type="radio" name="mid_sex" value="女" {:$data['mid_sex']=="女"?"checked":""}>女
+                            </div>
+                            <div class="edi_name">
+                                所在城市：<input type="text" name="mid_city" value="{$data['mid_city']}">
+                            </div>
+                            <div class="edi_name">
+                                真实姓名：<input type="text" name="mid_realname" value="{$data['mid_realname']}">
+                            </div>
+                            <input type="submit" value="保存" class="edi_sub">
+                        </form>
+                    </if>
+
+                </div>
+        </div>
+    </div>
+</div>

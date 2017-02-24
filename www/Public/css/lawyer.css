@@ -1,0 +1,223 @@
+.lawyer_all{
+    width: 1200px;
+    margin: auto;
+}
+li{list-style-type:none;display: inline-block;
+}
+.hd{
+    width: 100%;height:40px;
+    line-height: 40px;border-bottom:1px solid #6AC3FF;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #6AC3FF;
+}
+.hd ul li{
+    float: left;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.hd ul li.active{
+    height: 40px;
+    background:#00ae66;
+    color: white;
+}
+.g-sort{
+    background-color: #F6F6F6;
+    font-size: 16px;
+    color: #666;
+}
+.g-sort div{
+    padding-left: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+/* 公共样式 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,figure,form,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+    -webkit-text-size-adjust: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.g-sort .d1 .u-pinggu input{
+    width: 270px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border: 0;
+    padding-left: 10px;
+}
+.g-sort .d1 .u-pinggu a.u-btn-1{
+    float: left;
+    width: 58px;
+    height: 40px;
+}
+.g-sort .d1 .u-pinggu a.u-btn-2 {
+    float: left;
+    width: 104px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 20px;
+    background-color:#00ae66;
+    color: white;
+}
+
+.clearfix {
+    clear:both;overflow:hidden;
+}
+
+
+.wrap910 {
+    float: left;
+    width: 910px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.wrap910 .interlocution {
+    border-top: 1px dashed #DDD;
+    margin-top: 30px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.interlocution ul li {
+    border-bottom: 1px dashed #DDD;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.c1{
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin-right: 11px;
+    float: left;
+    background-color: #F6F6F6;
+    font-size: 16px;
+    color: #F55353;
+}
+.c2{
+    width: 750px;
+    float: left;
+}
+.c3{
+    font-size: 12px;
+    color: #999;
+    float: right;
+    line-height: 20px;
+}
+h2{
+    font-size: 16px;
+    color: #666;
+    line-height: 32px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.wrap250-1 {
+    float: right;
+    width: 250px;
+    overflow: hidden;
+}
+.m-more-new {
+    background-color: #F6F6F6;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.m-more-new h2 {
+    float: none;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    padding-left: 27px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px dashed #CECECE;
+}
+p {
+    padding-left: 30px;
+    font-size: 14px;
+    color: #666;
+    line-height: 36px;
+}
+a {
+    color: #757575;
+    text-decoration: none;
+}
+.h40hidden {
+    height: 40px;
+    overflow: hidden;
+}
+.m-more-new ul li img {
+    float: left;
+    margin-right: 7px;
+    _display: inline;
+}
+.m-more-new ul li a p {
+    line-height: 20px;
+}
+
+
+.lawyer_all{
+    width: 1200px;
+    height: auto;
+    margin: auto;
+}
+li{list-style-type:none;display: inline-block;
+}
+
+.u-title {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin-right: 11px;
+    float: left;
+    background-color: #F6F6F6;
+    font-size: 16px;
+    color: #F55353;
+}
+.u-cnt {
+    width: 750px;
+    float: left;
+}
+h2 {
+    font-size: 16px;
+    color: #666;
+    line-height: 32px;
+    font-weight: normal;
+}
+a {
+    color: #757575;
+    text-decoration: none;
+}
+.clearfix {
+    clear:both;overflow:hidden;
+}
+
+.interlocution {
+    border-top: 1px dashed #DDD;
+    margin-top: 30px;
+}
+
+.comment > ul > li {
+    height: 180px;
+    border-bottom: 1px dashed #DDD;
+    padding: 30px 15px;
+}
+
+.comment > ul > li > .m-cnt > p {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+}

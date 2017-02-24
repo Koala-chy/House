@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"type="text/css"href="CSSPATH/sale_index.css"/>
+    <script src="JSPATH/jquery.js" type="text/javascript"></script>
+    <title></title>
+</head>
+<body>
+
+<div class="div">
+    <!-- 导航1-->
+    <div class="div1">
+        <span class="span1_1">您当前位置：<a href="#">合肥二手房</a> > 出租房源</span>
+    </div>
+    <!-- 导航2-->
+    <div class="div2">
+        <div class="div2_1">
+            <span class="span2_1_1"><a href="#">地域地标</a></span><span class="span2_1_2">
+            <a href="__URL__/hire_LookHou">小区找房</a></span>
+            <span class="span2_1_3"><a href="__URL__/addData">我要出租</a></span>
+        </div>
+        <div class="div2_2">
+            <div class="div2_2_1">
+                <span class="span2_2_1">区域</span>
+                <span class="span2_2_2">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}">不限</a>
+                </span>
+
+                <span class="span2_2_3">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/ss">蜀山区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/ly">庐阳区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/bhe">包河区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/yh">瑶海区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/zw">政务区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/bhu">滨湖区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/jk">经开区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/xz">新站区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/bc">北城新区</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/fd">肥东</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/fx">肥西</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/cf">长丰</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/ch">巢湖</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'fn')}fn/lj">庐江</a>
+                </span>
+            </div>
+            <script type="text/javascript">
+                $(function(){
+
+                    $(".span2_2_3 a:contains('{$fn}')").addClass("active");
+
+                    $("#sell a:contains('{$sell}')").addClass("active");
+
+                    $("#house a:contains('{$house}')").addClass("active");
+
+                    $("#area a:contains('{$area}')").addClass("active");
+
+
+                })
+
+            </script>
+
+            <div class="div2_2_1">
+                <span class="span2_2_1">租金</span>
+                <span class="span2_2_2">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}">不限</a>
+                </span>
+
+                <span class="span2_2_3" id="sell">
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/1">500元以下</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/2">500-1000元</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/3">1000-1500元</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/4">1500-2000元</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/5">2000-2500元</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'sell')}sell/6">2500元以上</a>
+                </span>
+            </div>
+
+
+            <div class="div2_2_1">
+                <span class="span2_2_1">户型</span>
+                <span class="span2_2_2">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}">不限</a>
+                </span>
+                <span class="span2_2_3" id="house">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/1">一室</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/2">二室</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/3">三室</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/4">四室</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/5">五室</a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'house')}house/6">五室以上</a>
+                </span>
+            </div>
+
+
+            <div class="div2_2_1">
+                <span class="span2_2_1">类型</span> <span class="span2_2_2">
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'area')}">不限</a>
+               </span>
+                <span class="span2_2_3" id="area">
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'area')}area/1">整租</a>
+                    <a href="__URL__/hire_PerHou/{:arr2link($qArr,'area')}area/2">合租</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- 内容1-->
+    <div class="div3">
+        <div>
+            <div class="div3_1">
+                <span class="span3_1_3"><a href="__URL__/Hire_Shouye">出租房源</a></span>
+                <span class="span3_1_1"><a href="__URL__/Hire_PerHou">个人房源</a></span>
+            </div>
+            <div style="clear:both" class="div3_2">
+
+                <div class="div3_2_2">
+                <span class="span3_2_2"><b>综合排序</b></span>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'s')}s/0"><span class="span3_2_1">默认排序</span></a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'s')}s/1"><span class="span3_2_1">时间↑ </span></a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'s')}s/2"><span class="span3_2_1">总价↓</span></a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'s')}s/3"><span class="span3_2_1">单价↓</span></a>
+                <a href="__URL__/hire_PerHou/{:arr2link($qArr,'s')}s/4"><span class="span3_2_1">面积↓</span></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 内容2-->
+    <div class="div4">
+
+
+        <div class="div4_1">
+            <volist name="data" id="row">
+                <div class="div4_1_1">
+                    <img src="/Uploads/{$row.hire_house_photo_1}"/>
+                    <div class="div4_1_1_3">
+                        <h3><a href="__URL__/hire_Userinfo/id/{$row.hire_id}">{$row['hire_house_title']|msubstr=###,0,23,'gbk',false}</a></h3>
+                        <div class="div4_1_1_2">
+                            <span><a href="#">{$row.hire_type}</a></span>
+                            <span><a href="#">{$row.hire_house_bedroom}{$row.hire_house_parlor}</a></span>
+                            <span><a href="#">{$row.hire_house_floor}/{$row.hire_house_total}层</a></span>
+                            <span><a href="#">{$row.hire_house_acreage}</a></span>
+                            <span><a href="#">{$row.hire_house_orirnt}</a></span>
+                            <span><a href="#">建筑年代：{$row.hire_more_year}</a></span>
+                        </div>
+                        <div  class="div4_1_1_2">
+                            <span><a href="#">{$row.hire_house_area} </a></span>
+                            <span><a href="#">{$row.hire_house_name}</a></span>
+                        </div>
+                    </div>
+                    <div style="float:right;width:190px;height:100px;margin-right:50px;">
+                        <h4 style="font-size:24px;color:#f55353;font-family: Microsoft Yahei;">{$row.hire_house_price}元/月</h4>
+                    </div>
+                </div>
+            </volist>
+
+            <div class="pages" style="margin-top: 20px">
+                {$page}
+            </div>
+        </div>
+        <div class="div5">
+            <div class="div5_1">
+                <div class="div5_1_1">
+                    <span class="span5_1" style="border-bottom: 2px solid #00ae66">不动产评估</span>
+                    <span class="span5_2">精品房源</span>
+                </div>
+                <script type="text/javascript">
+                    $(function(){
+                        $('.span5_2').mousemove(function(){
+                            $('.span5_2').css({
+                                'border-bottom': '2px solid  #00ae66'
+                            });
+                            $('.span5_1').css({
+                                'border':'none'
+                            });
+                            $('#div5_1_5').css({
+                                'display':'block'
+                            });
+                            $('#div5_1_4').css({
+                                'display':'none'
+                            })
+                        });
+
+                        $('.span5_1').mousemove(function(){
+                            $('.span5_1').css({
+                                'border-bottom': '2px solid  #00ae66'
+                            });
+                            $('.span5_2').css({
+                                'border':'none'
+                            });
+                            $('#div5_1_5').css({
+                                'display':'none'
+                            });
+
+                            $('#div5_1_4').css({
+                                'display':'block'
+                            })
+                        })
+                    })
+
+                </script>
+                <div class="div5_1_4" id="div5_1_4" style="display:block">
+                    <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                    <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                    <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                    <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                    <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                    <div class="div5_1_3"> <span class="span5_1_3">我要评估</span></div>
+                </div>
+                <div class="div5_1_5" id="div5_1_5" style="display:none">
+                    <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                    <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                    <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                    <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                    <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                </div>
+            </div>
+
+            <div class="div5_2">
+                <div class="div5_2_1"> <span>本月热门小区</span></div>
+                <div class="div5_2_2"> <span>文华阁</span></div>
+                <div class="div5_2_2"> <span>文华阁</span></div>
+                <div class="div5_2_2"> <span>文华阁</span></div>
+                <div class="div5_2_2"> <span>文华阁</span></div>
+                <div class="div5_2_2"> <span>文华阁</span></div>
+            </div>
+        </div>
+
+        <div style="clear: both"></div>
+    </div>
+    <!-- 尾部-->
+    <div class="div6">
+        <h1 >猜你喜欢</h1>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image/2.jpeg"/><div><span class="span6_1"><a href="#">宝业城市绿苑</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image/3.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image/4.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image/5.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image/6.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+</div>
+
+</body>
+</html>

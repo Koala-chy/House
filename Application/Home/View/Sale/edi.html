@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GBK">
+    <title>个人中心-发布出售房源</title>
+    <link rel="stylesheet" type="text/css" href="CSSPATH/hfhouse.css">
+    <link rel="stylesheet" type="text/css" href="CSSPATH/Sale_self.css">
+    <script src="JSPATH/jquery.js"></script>
+    <script src="JSPATH/Sale.js"></script>
+</head>
+<body>
+<div class="Sale_addData">
+    <!--导航开始-->
+    <div class="topNav" >
+        <div class="tnleft">
+            <img src="IMAPATH/logo1.png" style="height: 43px;margin-left: 110px;float: left">
+            <dl class="tnleft">
+                <dd>
+                    <h3>
+                        <a href="#">房产资讯</a>
+                        <a href="#">新房</a>
+                        <a href="#">二手房</a>
+                        <a href="#">家居</a>
+                        <a href="#">业住社区</a>
+                    </h3>
+                </dd>
+            </dl>
+        </div>
+        <div class="tnRight">
+            <dd>
+                <h3>
+                    <eq name="Think.session.userid" value="">
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/login" style="color: white">登录</a></h3></dd>
+                        <else/>
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="" style="color: white">{$Think.session.username}</a></h3></dd>
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/logout" style="color: white">注销登录</a></h3></dd>
+                    </eq>
+                </h3>
+            </dd>
+        </div>
+    </div>
+    <!--导航结束-->
+    <!--正文部分左边导航开始-->
+    <div style="clear: both"></div>
+    <div>
+        <div   class="f1 sideMenu">
+            <ul>
+                <li>
+                    <h3 class="menu-list">
+                        <a href="#">个人中心</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="#">个人首页</a>
+                </li>
+                <li>
+                    <a href="#">我的消息</a>
+                </li>
+                <li>
+                    <a href="#">账号设置</a>
+                </li>
+                <li>
+                    <h3 class="menu-item">
+                        <a href="#">我的问答</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="#">不动产评估</a>
+                </li>
+                <li>
+                    <a href="#">律师在线</a>
+                </li>
+                <li>
+                    <h3 class="collapseMenu">
+                        <a href="#">房源管理</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="__URL__/index">出售房源管理</a>
+                </li>
+                <li>
+                    <a href="/Home/Hire/index">出租房源管理</a>
+                </li>
+                <li>
+                    <a href="#">求组房源管理</a>
+                </li>
+                <li>
+                    <a href="#">委托房源管理</a>
+                </li>
+                <li>
+                    <a href="#">求购房源管理</a>
+                </li>
+            </ul>
+            <div class="tel400 gray f16">
+                <span>客服电话</span>
+                400-887-1216
+            </div>
+        </div>
+        <!--正文部分左边导航结束-->
+        <!--正文部分中间开始-->
+        <div  class="Sale_center">
+            <form action="addData" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="sale_id" value="{$data[0]['sale_id']}">
+                <div class="Sale_center_body">
+                    <!--发布类型开始-->
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="Sale_center_body_1">发布类型</td>
+                            <td class="Sale_center_body_2" name="Sale_type">
+                                <ul>
+                                    <li id="residential" style="border-radius: 5px 0px 0px 5px"  value="住宅">住宅</li>
+                                    <li id="shops" value="商铺">商铺</li>
+                                    <li id="office"  value="写字楼">写字楼</li>
+                                    <li id="villa" value="别墅">别墅</li>
+                                    <li id="workshop" style="border-radius: 0px 5px 5px 0px" value="厂房">厂房</li>
+                                    <input id="type" type="hidden" name="Sale_type" value="">
+                                </ul>
+                            </td>
+                        </tr>
+                        <script type="text/javascript">
+
+                        </script>
+                        <tr>
+                            <td class="Sale_center_body_1">发布站点</td>
+                            <td>
+                                <select class="Sale_center_body_select" name="Sale_area">
+                                    <option value="合肥">合肥</option>
+                                    <option value="芜湖">芜湖</option>
+                                    <option value="蚌埠">蚌埠</option>
+                                    <option value="淮南">淮南</option>
+                                    <option value="马鞍山">马鞍山</option>
+                                    <option value="淮北">淮北</option>
+                                    <option value="铜陵">铜陵</option>
+                                    <option value="安庆">安庆</option>
+                                    <option value="黄山">黄山</option>
+                                    <option value="滁州">滁州</option>
+                                    <option value="阜阳">阜阳</option>
+                                    <option value="宿州">宿州</option>
+                                    <option value="六安">六安</option>
+                                    <option value="亳州">亳州</option>
+                                    <option value="池州">池州</option>
+                                    <option value="宣城">宣城</option>
+                                    <option value="巢湖">巢湖</option>
+                                    <option value="天长">天长</option>
+                                    <option value="宁国">宁国</option>
+                                    <option value="桐城">桐城</option>
+                                    <option value="南京">南京</option>
+                                    <option value="南昌">南昌</option>
+                                    <option value="徐州">徐州</option>
+                                    <option value="上海">上海</option>
+                                    <option value="北京">北京</option>
+                                    <option value="苏州">苏州</option>
+                                    <option value="杭州">杭州</option>
+                                    <option value="郑州">郑州</option>
+                                    <option value="天津">天津</option>
+                                    <option value="重庆">重庆</option>
+                                    <option value="成都">成都</option>
+                                    <option value="洛阳">洛阳</option>
+                                    <option value="常州">常州</option>
+                                    <option value="九江">九江</option>
+                                    <option value="镇江">镇江</option>
+                                    <option value="无锡">无锡</option>
+                                    <option value="南宁">南宁</option>
+                                    <option value="香港">香港</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--发布类型结束-->
+                    <!--基本信息开始-->
+                    <table>
+                        <caption class="Sale_center_caption">基本信息</caption>
+                        <tbody>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                小区名称
+                            </td>
+                            <td class="Sale_center_body_input_1">
+                                <div>
+                                    <input type="text" name="Sale_house_name" id="village_name" value="{$data[0]['sale_house_name']}" required>
+                                    <a href="#" class="Sale_center_body_input_a1">清除缓存</a>
+
+                                    <span style="font-size: 12px;color: red">(如果切换站点，请清除缓存)</span>
+                                    <a href="#" class="Sale_center_body_input_a2">无匹配小区？</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                区域
+                            </td>
+                            <td class="Sale_center_body_3">
+                                <div>
+                                    <input type="text" name="Sale_house_area" value="{$data[0]['sale_house_area']}" required>
+                                    <span>区</span>
+                                </div>
+                                <div>
+                                    <input type="text" name="Sale_house_business" value="{$data[0]['sale_house_business']}" required>
+                                    <span>商圈</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                房源地址
+                            </td>
+                            <td class="Sale_center_body_input_1">
+                                <div>
+                                    <input type="text" name="Sale_house_address" value="{$data[0]['sale_house_address']}" required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                户型
+                            </td>
+                            <td class="Sale_center_body_4">
+                                <select class="Sale_center_body_select" name="Sale_house_bedroom">
+                                    <option value="一室" >一室</option>
+                                    <option value="二室" >二室</option>
+                                    <option value="三室" >三室</option>
+                                    <option value="四室" >四室</option>
+                                    <option value="五室" >五室</option>
+                                    <option value="五室以上" >五室以上</option>
+                                </select>
+                                <select class="Sale_center_body_select" name="Sale_house_parlor">
+                                    <option value="一厅">一厅</option>
+                                    <option value="二厅">二厅</option>
+                                    <option value="三厅">三厅</option>
+                                    <option value="四厅">四厅</option>
+                                    <option value="五厅">五厅</option>
+                                    <option value="更多">更多</option>
+                                </select>
+                                <select class="Sale_center_body_select" name="Sale_house_toilet">
+                                    <option value="一卫">一卫</option>
+                                    <option value="二卫">二卫</option>
+                                    <option value="三卫">三卫</option>
+                                    <option value="四卫">四卫</option>
+                                    <option value="五卫">五卫</option>
+                                    <option value="更多">更多</option>
+                                </select>
+                                <select class="Sale_center_body_select" name="Sale_house_kitchen">
+                                    <option value="一厨">一厨</option>
+                                    <option value="二厨">二厨</option>
+                                    <option value="三厨">三厨</option>
+                                    <option value="四厨">四厨</option>
+                                    <option value="五厨">五厨</option>
+                                    <option value="更多">更多</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                建筑面积
+                            </td>
+                            <td class="Sale_center_body_3">
+                                <div>
+                                    <input type="text" name="Sale_house_acreage" value="{$data[0]['sale_house_acreage']}" required>
+                                    <span>平</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                售价
+                            </td>
+                            <td class="Sale_center_body_3">
+                                <div>
+                                    <input type="text" name="Sale_house_price" value="{$data[0]['sale_house_price']}" required>
+                                    <span>万</span>
+                                </div>
+                                <label>
+                                    <input type="checkbox" name="未填写">
+                                    <span style="margin-left: -28px">面谈</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                所在楼层
+                            </td>
+                            <td class="Sale_center_body_3">
+                                <div>
+                                    <input type="text" name="Sale_house_floor" value="{$data[0]['sale_house_floor']}" required>
+                                    <span>层</span>
+                                </div>
+                                <div>
+                                    <span>共</span>
+                                    <input type="text" name="Sale_house_total" value="{$data[0]['sale_house_total']}" required>
+                                    <span>层</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                产权
+                            </td>
+                            <td class="Sale_center_body_4">
+                                <select class="Sale_center_body_select" name="Sale_house_property">
+                                    <option value="产权不限">产权不限</option>
+                                    <option value="商品房">商品房</option>
+                                    <option value="商住两用">商住两用</option>
+                                    <option value="经济适用">经济适用</option>
+                                    <option value="回迁房">回迁房</option>
+                                    <option value="积资房">积资房</option>
+                                    <option value="房改房">房改房</option>
+                                </select>
+                                <select class="Sale_center_body_select" name="Sale_house_pronum">
+                                    <option value="40">40年</option>
+                                    <option value="50">50年</option>
+                                    <option selected="selected" value="70">70年</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                朝向/装修
+                            </td>
+                            <td class="Sale_center_body_4">
+                                <select class="Sale_center_body_select" name="Sale_house_orirnt">
+                                    <option value="东">东</option>
+                                    <option value="西">西</option>
+                                    <option value="南">南</option>
+                                    <option value="北">北</option>
+                                    <option value="东南">东南</option>
+                                    <option value="东北">东北</option>
+                                    <option value="西南">西南</option>
+                                    <option value="西北">西北</option>
+                                    <option selected="selected" value="南北">南北</option>
+                                    <option value="东西">东西</option>
+                                </select>
+                                <select class="Sale_center_body_select" name="Sale_house_decorate">
+                                    <option value="毛坯">毛坯</option>
+                                    <option value="中装">中装</option>
+                                    <option value="简装">简装</option>
+                                    <option value="精装">精装</option>
+                                    <option value="豪装">豪装</option>
+                                </select>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--基本信息结束-->
+                    <!--详细信息开始-->
+                    <table>
+                        <caption class="Sale_center_caption">详细信息</caption>
+                        <tbody>
+                        <tr>
+                            <td class="Sale_center_body_3">
+                                <i class="Sale_center_body_i">*</i>
+                                房源标题
+                            </td>
+                            <td class="Sale_center_body_input_1">
+                                <div>
+                                    <input type="text" name="Sale_house_title" value="{$data[0]['sale_house_title']}" required>
+                                    <span>5-30字</span>
+                                </div>
+                                <div class="Sale_center_detail">(发布房源时，可不写小区名称，系统将自动为您添加对应的小区名称)</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_5">
+                                <i class="Sale_center_body_i">*</i>
+                                房源详情
+                            </td>
+                            <br>
+                            <td class="Sale_center_body_input_1">
+                                <div>
+                                    <textarea name="Sale_house_information" required>{$data[0]['sale_house_information']}</textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_body_5">
+                                <i class="Sale_center_body_i">*</i>
+                                房源图片
+                            </td>
+                            <br>
+                            <td class="Sale_center_body_file">
+                                <div>
+                                    <input type="file" name="Sale_house_photo1">
+                                    <input type="file" name="Sale_house_photo2">
+                                    <input type="file" name="Sale_house_photo3">
+                                    <input type="file" name="Sale_house_photo4">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--详细信息结束-->
+                    <!--更多信息开始-->
+                    <div style="clear: both"></div>
+                    <table>
+                        <caption class="Sale_center_caption">更多信息</caption>
+                        <tbody>
+                        <tr>
+                            <td>建筑年代</td>
+                            <td class="Sale_center_more">
+                                <div>
+                                    <input type="text" name="Sale_more_year" value="{$data[0]['sale_more_year']}">
+                                    <span style="margin-left: 35px">年</span>
+                                </div>
+                            </td>
+                            <td class="Sale_center_more">
+                                <div>
+                                    <span style="margin-left: 1px">产证时间</span>
+                                    <input type="text" name="Sale_more_time" value="{$data[0]['sale_more_time']}">
+                                    <span>年</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>看房时间</td>
+                            <td class="Sale_center_seehouse">
+                                <ul class="Sale_center_seehouse_ul">
+                                    <li style="border-radius: 5px 0px 0px 5px " id="time1">随时</li>
+                                    <li style="border-radius: 0px 5px 5px 0px " id="time2">非工作时间</li>
+                                    <input type="hidden" name="Sale_more_look" id="value" value="">
+                                </ul>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>配套设施</td>
+                            <td class="Sale_center_ss">
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="水">
+                                    <span>水</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="电">
+                                    <span>电</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="管道天然气/煤气">
+                                    <span> 管道天然气/煤气 </span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="市政供暖">
+                                    <span>市政供暖 </span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="中央空调">
+                                    <span> 中央空调 </span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="有线电视">
+                                    <span> 有线电视</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="宽带">
+                                    <span>宽带</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="电梯">
+                                    <span>电梯 </span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="车位">
+                                    <span>车位</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="地下室/储藏室">
+                                    <span>地下室/储藏室 </span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="Sale_more_facility[]" value="其他">
+                                    <span>其他</span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>房源特色</td>
+                            <td class="Sale_center_style">
+                                <div id="tsInputs"></div>
+                                <div>
+                                    <input type="text" name="Sale_more_character0" value="" id="h0">
+                                    <i id="fyBox" class="fyBox">
+
+                                    </i>
+                                    <input type="hidden" name="Sale_more_character" value="" id="h1">
+                                    <input type="hidden" name="Sale_more_character1" value="" id="h2">
+                                    <input type="hidden" name="Sale_more_character2" value="" id="h3">
+
+                                    <div>
+                                        <ul class="Sale_center_style_ul" id="td">
+                                            <li id="td1" value="学区">学区</li>
+                                            <li id="td2" value="复式">复式</li>
+                                            <li id="td3" value="无营业税">无营业税</li>
+                                            <li id="td4" value="南北通透">南北通透</li>
+                                            <li id="td5" value="唯一住房">唯一住房</li>
+                                            <li id="td6" value="带户口">带户口</li>
+                                            <li id="td7" value="交通便利">交通便利</li>
+                                            <li id="td8" value="采光好">采光好</li>
+                                            <li id="td9" value="婚房">婚房</li>
+                                        </ul>
+                                    </div>
+                                    <!--<div style="margin-left: 150px;margin-top: -27px">-->
+                                    <!--<span id="sp1">-->
+                                    <!--&lt;!&ndash;<i title="点击删除">×</i>&ndash;&gt;-->
+                                    <!--</span>-->
+                                    <!--<span id="sp2">-->
+                                    <!--&lt;!&ndash;<i title="点击删除">×</i>&ndash;&gt;-->
+                                    <!--</span>-->
+                                    <!--<span id="sp3">-->
+                                    <!--&lt;!&ndash;<i title="点击删除">×</i>&ndash;&gt;-->
+                                    <!--</span>-->
+                                    <!--</div>-->
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="Sale_center_hot">
+                                <span>热点标签（最多三个）：</span>
+                                <a href="#">带户口</a>
+                                <a href="#">带地铁</a>
+                                <a href="#">交通便利</a>
+                                <a href="#">采光好</a>
+                                <a href="#">婚房</a>
+                                <a href="#">配套齐全</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>其他信息</td>
+                        </tr>
+                        <tr>
+                            <td>联系人</td>
+                            <td class="Sale_center_man">
+                                <input type="text" name="Sale_linkman" value="{$data[0]['sale_linkman']}">
+                            </td>
+                            <td class="Sale_center_phone" >
+                                <div>
+                                    <span>电话</span>
+                                    <input type="text" name="Sale_tell" value="{$data[0]['sale_tell']}">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Sale_center_checkbox" colspan="3">
+                                <label>
+                                    <input type="checkbox" name="未填写">
+                                    <span>委托发布（勾选此项，房源将发布到后台，由客服人员为您安排）</span>
+                                </label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--更多信息结束-->
+                </div>
+                <input type="submit" value="修改" class="Sale_center_submit">
+            </form>
+        </div>
+        <!--正文部分中间结束-->
+        <!--正文部分结束-->
+    </div>
+    <div style="clear: both"></div>
+    <!--尾部开始-->
+    <div class="bottom">
+        <div class="wrap">
+            <div class="friend_link dgray14px9" id="hutia"><b>友情链接：</b>
+                <a href="http://newhouse.letfind.com.cn/" title="福州楼盘 " target="_blank">福州楼盘</a><a href="http://sz.fangjia.com/" title="深圳房价 " target="_blank">深圳房价</a><a href="http://www.tengfun.com/" title="滕州房产网 " target="_blank">滕州房产网</a><a href="http://www.dezhong365.com" title="德众金融 " target="_blank">德众金融</a><a href="http://www.qiuxingwang.cn/ " title="球星网 " target="_blank">球星网</a><a href="http://www.xinwenquan.org" title="娱乐新闻 " target="_blank">娱乐新闻</a><a href="http://www.xkhouse.com/" title="星空地产  " target="_blank">星空地产 </a><a href="http://www.guangyuanol.cn" title="川北在线 " target="_blank">川北在线</a><a href="http://zz.mnw.cn/" title="漳州新闻网 " target="_blank">漳州新闻网</a><a href="http://newhouse.fy.ahhouse.com/5155/" title="阜阳祥源文旅城 " target="_blank">阜阳祥源文旅城</a>            </div>
+            <div class="wx clearfix">
+                <dl>
+                    <dt><img src="IMAPATH/xfh_ewm.png"></dt>
+                    <dd><p class="f16"><b>星房惠移动客户端</b></p>
+                        <p class="f12">让房子在手中转起来</p>
+                        <p><a href="https://itunes.apple.com/cn/app/id786090055" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/iphone.gif" width="71" height="24">
+                        </a>&nbsp;&nbsp;<a href="http://app.xkhouse.com/down.php" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt><img src="IMAPATH/zlyl1.gif"></dt>
+                    <dd><p class="f16"><b>左邻右里移动客户端</b></p>
+                        <p class="f12">友邻就在身边</p>
+                        <p><a href="http://nextdoors.com.cn/hfwzone.ipa" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/iphone.gif" width="71" height="24">
+                        </a>&nbsp;&nbsp;<a href="http://nextdoors.com.cn/XKFriend.apk" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="IMAPATH/ewm.gif"></dt>
+                    <dd><p class="f16"><b>星空团官方微信</b></p>
+                        <p class="f12">手指移动，轻松掌握房产最新优惠活动</p>
+                    </dd>
+                </dl>
+                <div style="clear: both"></div>
+            </div>
+            <div class="links-inner"><a target="_blank" href="http://www.hfhouse.com/company/about.html" rel="nofollow">公司简介</a><span>|</span><a target="_blank" href="http://www.nextdoors.com.cn/main.html" rel="nofollow">左邻右里</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/ggfw.html" rel="nofollow">广告服务</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/join.html" rel="nofollow">诚聘英才</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/contact.html" rel="nofollow">联系方法</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/licheng.html" rel="nofollow">精彩历程</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/sitemap.html" rel="nofollow">网站地图</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/privacy.html" rel="nofollow">版权声明</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/guwen.html" rel="nofollow">法律顾问</a><span>|</span><a target="_blank" href="http://aixin.xkhouse.com/" rel="nofollow">星空爱心慈善基金</a>
+            </div>
+
+            <div class="foot-copy dgray14px9">互联网经营许可证:
+                <a href="http://www.miibeian.gov.cn/" target="_blank"></a>
+                <a href="http://www.miibeian.gov.cn/" target="_blank">皖ICP备16017591号</a>
+                <a href="http://news.hfhouse.com/html/225806.html" target="_blank">广播电视节目制作经营许可证</a>
+                <a href="http://hefei.cyberpolice.cn/" target="_blank">网警</a>
+                <br>? 2000-2016合肥星空投资管理有限公司　客服电话:400-888-8888　0551-68888888　Email:421032813@qq.com </div>
+            <div class="afd_com">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="896" height="35" hspace="0" vspace="0" style="margin:0 auto 3px;">
+                    <param name="movie" value="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf">
+                    <param name="quality" value="high"><param name="wmode" value="transparent"><embed style="margin:0 auto 3px;" src="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf" width="896" height="35" hspace="0" vspace="0" quality="high" type="application/x-shockwave-flash" wmode="transparent"></object>
+                <div id="ggbz" style="position:absolute;top:10px;right:10px;font-size:12px;color:#fff;z-index:10;background:black;line-height:1em;padding:2px;opacity:0.3">广告</div>
+            </div>
+        </div>
+    </div>
+    <!--尾部结束-->
+</div>
+</body>
+</html>

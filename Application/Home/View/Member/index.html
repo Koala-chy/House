@@ -1,0 +1,60 @@
+<div style="clear: both"></div>
+<div class="self_center" >
+    <div class="self_center_show" style="float: left">
+        <div class="self_center_img" style="float: left">
+            <if condition="$Think.session.rank eq 1">
+                <!--普通用户-->
+                <eq name="data.user_photo" value="">
+                    <img src="IMAPATH/u-pic.png">
+                    <else/>
+                    <img src="/../Uploads/{$data['user_photo']}"  width="100px">
+                </eq>
+                <elseif condition="$Think.session.rank eq 2"/>
+                <!--经纪人用户-->
+                <eq name="data.mid_photo" value="">
+                    <img src="IMAPATH/u-pic.png">
+                    <else/>
+                    <img src="/../Uploads/{$data['mid_photo']}"  width="100px">
+                </eq>
+            </if>
+            <!--<eq name="data.user_photo" value="">-->
+                <!--<img src="IMAPATH/u-pic.png">-->
+                <!--<else/>-->
+                <!--<img src="/../Uploads/{$data['user_photo']}"  width="100px">-->
+            <!--</eq>-->
+
+        </div>
+        <div class="self_center_show_list"  style="float: left">
+            <ul>
+                <li>[{$Think.session.username}]</li>
+                <li style="margin-bottom: 20px">
+                    <span class="self_center_show_list2">
+                        <if condition="$Think.session.rank eq 1">
+                            {$data.user_phone}
+                            <elseif condition="$Think.session.rank eq 2"/>
+                            {$data.mid_phone}
+                        </if>
+
+                    </span>
+                    <span class="self_center_show_list3">
+
+                    </span>
+                    <span class="self_center_show_list4">
+
+                    </span>
+                    <span class="self_center_show_list5">
+
+                    </span>
+                </li>
+                <div style="clear: both"></div>
+                <li>
+                    <span>我的钱包：<i>0.00</i></span>
+                    <span>我的消息：（<i>0</i>）</span>
+                </li>
+                <li>
+                   <a href="editor">我的资料</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

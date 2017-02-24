@@ -1,0 +1,171 @@
+<!--房产经纪人-->
+<link rel="stylesheet" type="text/css" href="CSSPATH/agent.css">
+<div class="agent_list_all">
+
+    <div>
+      <a href="#">您当前的位置：</a>
+      <a href="__APP__/Home/Index/index">合肥二手房&nbsp;&nbsp;>&nbsp;</a>
+      <a href="__APP__/Home/Agent/agent">房产经纪人</a>
+    </div>
+
+
+    <script type="text/javascript">
+        $(function(){
+            var a='{$area}';
+            console.log(a);
+
+            $(".js_area a:contains('"+a+"')").addClass("active");
+
+        })
+
+    </script>
+
+    <div class="agent_region_search">
+        <dl class="sear_area" style="border:none;">
+            <dt>区域</dt>
+            <dd class="area_list js_area" style="">
+                <a href="__URL__/agent/area/">不限</a>
+                <a href="__URL__/agent/area/{:urlencode('蜀山区')}">蜀山区</a>
+                <a href="__URL__/agent/area/{:urlencode('滨湖区')}">滨湖区</a>
+                <a href="__URL__/agent/area/{:urlencode('高新区')}">高新区</a>
+                <a href="__URL__/agent/area/{:urlencode('庐阳区')}">庐阳区</a>
+                <a href="__URL__/agent/area/{:urlencode('经开区')}">经开区</a>
+                <a href="__URL__/agent/area/{:urlencode('新站区')}">新站区</a>
+                <a href="__URL__/agent/area/{:urlencode('包河区')}">包河区</a>
+                <a href="__URL__/agent/area/{:urlencode('政务区')}">政务区</a>
+                <a href="__URL__/agent/area/{:urlencode('瑶海区')}">瑶海区</a>
+                <a href="__URL__/agent/area/{:urlencode('北城新区')}">北城新区</a>
+                <a href="__URL__/agent/area/{:urlencode('肥西县')}">肥西县</a>
+                <a href="__URL__/agent/area/{:urlencode('肥东县')}">肥东县</a>
+                <a href="__URL__/agent/area/{:urlencode('长丰县')}">长丰县</a>
+                <a href="__URL__/agent/area/{:urlencode('其他')}">其他</a>
+            </dd>
+            <div style="clear: both"></div>
+        </dl>
+    </div>
+
+     <div class="com_rank">综合排序</div>
+
+      <!-- 经纪人列表-->
+    <div class="agent_list">
+
+     <div class="agent_list_right">
+
+
+        <volist name="data" id="row">
+          <div class="list">
+
+              <div class="list_photo">
+                  <img src="http://uploadcdn.xkhouse.com/attachment/image/20160913/20160913162049_30715.jpg" height="125" width="94">
+
+              </div>
+
+              <div class="list_info">
+                <div class="list_info_left">
+                  <div style="font-size: 16px">{$row.mid_realname}</div>
+                  <p>电话：{$row.mid_phone}</p>
+                  <p>所属公司：{$row.mid_company}</p>
+                  <p>服务区域：{$row.mid_region}</p>
+                </div>
+
+                  <div class="list_info_right">
+                      <span class="check_shop"><a href="__URL__/agent_shop/id/{$row.mid_id}" target="_blank">查看店铺</a></span>
+                      <br>
+                      <h5>有效房源出售<span style="color: red">{$row.mid_id|agent_count}</span>条，出租<span style="color: red">0</span>条</h5>
+                  </div>
+
+                  <div style="clear: both"></div>
+              </div>
+
+              <div style="clear: both"></div>
+           </div>
+       </volist>
+         <br>
+         <div class="pages">{$pager}</div>
+      </div>
+
+
+
+     <div class="agent_list_left">
+         <div class="list_left_pic">
+             <a href=""><img src="IMAPATH/agent_jiaru.jpg" height="66" width="250" alt=""></a>
+         </div>
+
+         <div class="room_list">
+              <div class="room_type">
+                  <span>经纪人推介</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="chushou">出售</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a id="chuzu">出租</a>
+              </div>
+
+
+             <!-- 出售-->
+              <ul class="room_list_info" id="chushou_list">
+                  <li>
+                      <a href="/sale/5541604.html">
+                          <img src="http://uploadcdn.xkhouse.com/attachment/image/20160829/20160829142921_40441.jpg" height="78" width="100" alt="">
+                          <p>滨湖区-高速滨湖时代广场</p>
+                          <p>2室2厅  89.00m?</p>
+                          <p>175.00万</p>
+                      </a>
+                  </li>
+              </ul>
+
+
+             <!-- 出租-->
+
+             <ul id="chuzu_list" class="room_list_info" style="display: none">
+                 <li>
+                     <a href="/sale/5541604.html">
+                         <img src="http://uploadcdn.xkhouse.com/attachment/image/20160829/20160829142921_40441.jpg" height="78" width="100" alt="">
+                         <p>滨湖区-出租</p>
+                         <p>2室2厅  89.00m?</p>
+                         <p>175.00万</p>
+                     </a>
+                 </li>
+             </ul>
+         </div>
+
+
+          <script type="text/javascript" src="JSPATH/jquery.js"></script>
+           <script type="text/javascript">
+                 $(function(){
+
+                     $('#chushou').mousemove(function(){
+                           $('#chushou').css('color','#6ab4ff');
+                           $('#chuzu_list').css('display','none');
+                           $('#chushou_list').css('display','');
+
+
+                     }).mouseout(function(){
+
+                         $('#chushou').css('color','black');
+
+                     });
+
+
+
+
+                     $('#chuzu').mousemove(function(){
+                         $('#chuzu').css('color','#6ab4ff');
+                         $('#chuzu_list').css('display','');
+                         $('#chushou_list').css('display','none');
+                     }).mouseout(function(){
+
+                         $('#chuzu').css('color','black');
+
+                     });
+
+
+                 })
+
+
+           </script>
+
+     </div>
+
+     <div style="clear: both"></div>
+
+  </div>
+
+</div>

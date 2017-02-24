@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="gbk">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="CSSPATH/lawyer.css"/>
+    <style>
+        html,body,div,span,h2,p,a,font,img,form,ul,li {
+            -webkit-text-size-adjust: auto;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lawyer_all">
+    <!--我是可爱的分割线----------------------------------------------->
+    <div style="line-height: 60px;">
+        <a href="#">您当前的位置：</a>
+        <a href="#">合肥二手房&nbsp;&nbsp;>&nbsp;</a>
+        <a href="#">律师在线</a>
+    </div>
+</div>
+<!--我是可爱的分割线----------------------------------------------->
+
+
+<div class="lawyer_all clearfix" style="">
+
+    <div class="wrap910">
+        <div class="interlocution">
+            <div>
+                <span class="c1">
+                    Q
+                </span>
+                <br/>
+                <table>
+
+                    <tr>
+                        <td colspan="3">{$ppp.problem}</td>
+                    </tr>
+                    <tr><td><a href="/Home/Lawyer/index">返回</a></td></tr>
+                    <tr>
+                        <td>{$ppp.ptime|date='Y-m-d H:i:s',###}</td>
+                        <td>分享到：
+                            <a href="">A</a>
+                            <a href="">B</a>
+                            <a href="">C</a>
+                            <a href="">D</a>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <!--<td style="float: left">A</td>-->
+                        <!--<td>{$n}条回答</td>-->
+                        <!--<td align="right"><a href="/Home/Lawyer/answers">我要回答</a></td>-->
+
+
+
+                    </tr>
+                </table>
+            </div>
+            <div style="border-top: 1px dashed #DDD;">
+                <span class="c1" style="color: green">
+                    A
+                </span>
+                <span>
+                   {$n}条回答
+                </span>
+               <span align="right"><h2><a href="javascript:" class="u-btn-2" id="btnZixun" onClick="bgDiv.style.display='';loginBox.style.display='';">我要回答</a></h2></span>
+            </div>
+        </div>
+
+
+        <div class="comment" style="margin-top: 30px;"  >
+            <table>
+
+                <volist id="row" name="list">
+                    <tr >
+
+                        <td align="center">{$row.answer}</td>
+
+
+                    </tr>
+                    <tr><td height="100px"><img src="__PUBLIC__/image/lawy.jpg"style="width: 80px" height="112px"></td></tr>
+                    <tr ><td>{$x}</td></tr>
+
+
+                    <tr >
+                        <td width="500px">{$y}</td>
+                        <td align="right">{$row.atime|date='Y-m-d H:i:s',###}</td>
+                    </tr>
+                </volist>
+
+
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<style>
+    body,#Mdown {
+        margin: 0;
+        padding: 0;
+        font: normal 14px/180% Tahoma,sans-serif;
+
+    }
+    #loginBox {
+        margin: 0 auto;
+        padding: 0px;
+        text-align: left;
+        width: 700px;
+        height: 300px;
+        background: #EAEEFF;
+        font-size: 9pt;
+        border: 1px solid #829AFF;
+        overflow: hidden;
+        filter: alpha(opacity=90);
+        opacity: 1;
+    }
+    #loginBox .title {
+        text-align: left;
+        padding-left: 10px;
+        font-size: 11pt;
+        border-bottom: 1px solid #829AFF;
+        height: 25px;
+        line-height: 25px;
+        cursor: move;
+    }
+    #loginBox .t1 {
+        float: left;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    #loginBox .t2 {
+        float: right;
+        text-align: center;
+        line-height: 18px;
+        height: 18px;
+        width: 18px;
+        margin-top: 3px;
+        margin-right: 2px;
+        overflow: hidden;
+        border: 1px solid #FF5889;
+        background: #FFE0E9;
+        cursor: pointer;
+    }
+    #loginBox .login {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+    input.submit {
+        float: right;
+        border: 1px solid #829AFF;
+        FONT-SIZE: 9px;
+        background: #EAEEFF;
+        HEIGHT: 20px;
+        margin-top: 5px;
+        margin-right: 70px;
+    }
+    #bgDiv {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        /*background-color: #777;*/
+        opacity: 0.7;
+    }
+</style>
+
+<div id="bgDiv" style="display:none;">
+
+</div>
+
+<div id="loginBox" style="position:absolute; left:367px; top:150px; z-index:1;display: none;" >
+    <div class="title" id="Mdown" style="background-color: #6ab4ff;height: 50px;font-size: 16px;line-height: 50px">
+        <span class="t1">我要咨询（先登录，在回答）</span>
+        <span class="t2" title="关闭" onClick="login.style.display='none';bgDiv.style.display='none'">X</span>
+    </div>
+    <div class="login">
+
+
+        <form method="post" action="/Home/Lawyer/read/id/{$id}">
+            <div>
+                <textarea name="answer" style="width: 566px;height:120px;margin: 25px;resize: none"required="required">内容不能为空</textarea>
+            </div>
+            <div>
+                <input type="submit"style="background-color:#6ab4ff;font-size: 20px">
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var IsMousedown, LEFT, TOP, login;
+
+    document.getElementById("Mdown").onmousedown=function(e) {
+        login = document.getElementById("loginBox");
+        IsMousedown = true;
+        e = e||event;
+        LEFT = e.clientX - parseInt(login.style.left);
+        TOP = e.clientY - parseInt(login.style.top);
+
+        document.onmousemove = function(e) {
+            e = e||event;
+            if (IsMousedown) {
+                login.style.left = e.clientX - LEFT + "px";
+                login.style.top = e.clientY - TOP + "px";
+            }
+        }
+
+        document.onmouseup=function(){
+            IsMousedown=false;
+        }
+    }
+</script>
+<!--我是可爱的分割线----------------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+body, button, input, select, textarea {
+    font-size: 14px;
+    font-family: "Microsoft yahei";
+    line-height: 24px;
+    color: #000;
+}
+.fl {
+    float: left;
+}
+.wrap_dl {
+    width: 870px;
+    margin: 100px auto;
+}
+.w403 {
+    margin-left: 97px;
+}
+ol, ul {
+    list-style: none;
+}
+.gray {
+    color: #999;
+}
+.green {
+    color: #75cc4d;
+}
+.f22 {
+    font-size: 22px;
+    line-height: 1.5em;
+    padding: 0 9px;
+}
+
+.inputBox.dl_y i {
+    background: url(../image/enter.png) no-repeat 0 0;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    float: left;
+}
+.inputBox input {
+    width: 340px;
+    line-height: 42px;
+    height: 42px;
+    float: left;
+    padding-left: 10px;
+
+}
+input {
+    border: 1px solid #00ae66;
+}
+
+.f28 {
+    font-size: 28px;
+}
+.btnW180 {
+
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+}
+
+.btnW180 {
+    font-size: 28px;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    background: #00ae66;
+    text-align: center;
+    color: #FFF;
+}
+.fr {
+    float: right;
+}
+.inputBox.dl_m i {
+    background: url(../image/enter.png) no-repeat 0 -65px;
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    float: left;
+}
+

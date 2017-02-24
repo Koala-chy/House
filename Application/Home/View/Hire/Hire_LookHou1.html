@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/public/js3/js1.js" type="text/javascript"></script>
+    <link rel="stylesheet"type="text/css" href="CSSPATH/3.css"/>
+    <script src="/public/js/jquery.js" type="text/javascript"></script>
+    <script src="/public/js3/js2.js" type="text/javascript"></script>
+    <meta charset="GBK">
+    <title></title>
+</head>
+<body>
+<div class="div">
+    <!-- 导航1-->
+    <div class="div1">
+        <span class="span1_1">您当前位置：<a href="#">合肥二手房</a> >小区找房</span>
+    </div>
+    <!-- 导航2-->
+    <div class="div2">
+        <div class="div2_1">
+            <span class="span2_1_2"><a href="__URL__/Sale_Shouye">地域地标</a></span><span class="span2_1_1"><a href="#">小区找房</a></span><span class="span2_1_3"><a href="#">我要卖房</a></span>
+        </div>
+        <div class="div2_2">
+            <div class="div2_2_1">
+                <span class="span2_2_1">区域</span><span class="span2_2_2"><a href="#">不限</a> </span><span class="span2_2_3"> <a href="__URL__/Sale_LookHou/fn/蜀山区">蜀山区</a> <a href="__URL__/Sale_LookHou/fn/庐阳区">庐阳区</a> <a href="__URL__/Sale_LookHou/fn/高新区">高新区</a> <a href="__URL__/Sale_LookHou/fn/滨湖区">滨湖区</a> <a href="__URL__/Sale_LookHou/fn/北城新区">北城新区</a> <a href="__URL__/Sale_LookHou/fn/肥东">肥东</a> <a href="__URL__/Sale_LookHou/fn/肥西">肥西</a> <a href="__URL__/Sale_LookHou/fn/巢湖">巢湖</a> <a href="__URL__/Sale_LookHou/fn/庐江">庐江</a></span>
+            </div>
+            <div class="div2_2_1">
+                <span class="span2_2_1">类型</span> <span class="span2_2_2"> <a href="#">不限</a> </span> <span class="span2_2_3">  <a href="__URL__/Sale_LookHou/f/住宅">住宅</a>  <a href="__URL__/Sale_LookHou/f/商铺">商铺</a>  <a href="__URL__/Sale_LookHou/f/写字楼">写字楼</a>  <a href="___URL__/Sale_LookHou/f/别墅">别墅</a>  <a href="__URL__/Sale_LookHou/f/厂房">厂房</a></span>
+            </div>
+            <div class="div2_2_1">
+                <span class="span2_2_1">均价</span><span class="span2_2_2"><a href="#">不限</a>  </span><span class="span2_2_3"> <a href="__URL__/Sale_LookHou/as/40万以下">40万以下</a> <a href="__URL__/Sale_LookHou/as/40-70万">40-70万</a> <a href="__URL__/Sale_LookHou/as/70-80万">70-80万</a> <a href="__URL__/Sale_LookHou/as/80-90万">80-90万</a> <a href="__URL__/Sale_LookHou/as/90-100万">90-100万</a> <a href="__URL__/Sale_LookHou/as/100万以上">100万以上</a> <input type="text" placeholder="下限\万" id="input1"/>--<input type="text" placeholder="上限\万"id="input2"/></span>
+                <span style="width:80px;height:27px;font-size:14px;border:1px solid #6ab4ff;color:#6ab4ff;display:inline-block;margin-left:20px;padding-top:5px;text-align:center;"><a href="#" id="a">确认</a></span>
+            </div>
+        </div>
+        <div class="div3">
+            <form>
+                <input type="text" placeholder="请输入楼盘名称" class="input1"/>
+                <input type="submit"value="搜索" class="input2"/>
+            </form>
+            <div class="div3_1"><span class="span3_1"><a href="#">默认排序</a></span><span class="span3_1"><a href="__URL__/Sale_LookHou/sc/1">均价↓</a></span>共<span  class="span3_2">?</span >个小区</div>
+        </div>
+    </div>
+    <!-- 内容2-->
+    <div class="div4">
+
+
+        <div class="div4_1">
+            <volist name="data" id="row">
+                <div class="div4_1_1">
+                    <img src="{$row.sale_house_photo}"/>
+                    <div class="div4_1_1_3">
+                        <h3><a href="__URL__/Sale_Userinfo">{$row['sale_house_title']}</a></h3>
+                        <div class="div4_1_1_2"><span><a href="#">{$row.sale_type}</a></span><span><a href="#">{$row.sale_house_bedroom}{$row.sale_house_parlor}</a></span><span><a href="#">{$row.sale_house_floor}/{$row.sale_house_total}层</a></span><span><a href="#">{$row.Sale_house_acreage}</a></span><span><a href="#">{$row.sale_house_orirnt}</a></span><span><a href="#">建筑年代：{$row.sale_more_year}</a></span></div>
+                        <div  class="div4_1_1_2"><span><a href="#">{$row.sale_house_area} </a></span><span><a href="#">{$row.sale_house_name}</a></span></div>
+                        <div  class="div4_1_1_2"><span><a href="#">经纪人： </a></span><span><a href="#">合房网友 </a></span><span><a href="#">{$row.sale_time} </a></span></div>
+                    </div>
+                    <div style="float:right;width:190px;height:100px;margin-right:50px;"><h4 style="font-size:24px;color:#f55353;font-family: Microsoft Yahei;">{$row.sale_house_price}万</h4><span style="font-size:14px;color:#999;font-family: Microsoft Yahei;">建筑面积：{$row.sale_house_acreage}㎡ {$row.sale_perprice}元/㎡</span></div>
+                </div>
+            </volist>
+
+
+
+        </div>
+        <div class="div5">
+            <div class="div5_1_1">
+                <span class="span5_1" onmouseover="test(this)" style="border-bottom:3px solid #7dbdfe" >不动产评估</span>
+                <span class="span5_2" onmouseover="test(this)" style="border-bottom:3px solid #7dbdfe">精品房源</span>
+            </div>
+            <div class="div5_1_4" id="div5_1_4" style="display:block">
+                <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                <div class="div5_1_2"> <span><font color="red">Q:</font>我买的二手房房产证已...</span><br><span><font color="red">A:</font>这个你需到房屋所在地的派出所详细的问...</span></div>
+                <div class="div5_1_3"> <span class="span5_1_3">我要评估</span></div>
+            </div>
+            <div class="div5_1_5" id="div5_1_5" style="display:none">
+                <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+                <div class="div5_1_2"> <span>买套精装房拎包入住 庐阳优质二</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- 尾部-->
+    <div class="div6">
+        <h1 >猜你喜欢</h1>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image5/2.jpeg"/><div><span class="span6_1"><a href="#">宝业城市绿苑</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image5/3.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image5/4.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image5/5.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+        <div class="div6_1">
+            <div class="div6_1_1"><img src="/public/image5/6.jpg"/><div><span class="span6_1"><a href="#">安纺二村</a></span><span style="color:#ea2929;font-size:18px;float:right; font-family:Microsoft Yahei;">2200元</span></div><p style="font-size:14px;color:#999;text-align:center">二室二厅 | 105.00㎡ | 装修/毛坯</p></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

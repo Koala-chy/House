@@ -1,0 +1,32 @@
+
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script>
+    $(function(){
+        $("#a").change(function(){
+            var $this = $(this);
+            console.log($this.val());
+            var url = '__URL__/bbb';
+            $.ajax(url,{
+                data:{id:$this.val()},
+                success:function(data){
+                    console.log(data);
+                    $("#b").empty();
+                    for(var i=0;i<data.length;i++){
+                        $("#b").append('<option value="'+i+'">'+data[i]+'</option>');
+                    }
+                },
+                dataType:'json'
+            })
+        });
+    })
+</script>
+<select name="a" id="a">
+    <option>«Î—°‘Ò</option>
+    <volist id="r" name="data">
+
+        <option value="{$key}">{$r}</option>
+    </volist>
+</select>
+<select name="b" id="b">
+    <option >«Î—°‘Ò</option>
+</select>

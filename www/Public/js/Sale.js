@@ -1,0 +1,128 @@
+/**
+ * Created by Administrator on 2016/10/22 0022.
+ */
+$(function(){
+    $(document).ready(function(){
+        $("#residential").css("background","rgb(106,180,255)");
+        $("#residential").css("color",'white');
+        $('#type').val('住宅');
+    });
+    $("#residential").click(function(){
+        $("#residential").css("background","rgb(106,180,255)");
+        $("#residential").css("color",'white');
+        $("#shops").css("background","white");
+        $("#shops").css("color",'black');
+        $("#office").css("background","white");
+        $("#office").css("color",'black');
+        $("#villa").css("background","white");
+        $("#villa").css("color",'black');
+        $("#workshop").css("background","white");
+        $("#workshop").css("color",'black');
+        $('#type').val('住宅');
+    });
+    $("#shops").click(function(){
+        $("#residential").css("background","white");
+        $("#residential").css("color","black");
+        $("#shops").css("background","rgb(106,180,255)");
+        $("#shops").css("color","white");
+        $("#office").css("background","white");
+        $("#office").css("color","black");
+        $("#villa").css("background","white");
+        $("#villa").css("color","black");
+        $("#workshop").css("background","white");
+        $("#workshop").css("color","black");
+        $('#type').val('商铺');
+    });
+    $("#office").click(function(){
+        $("#residential").css("background","white");
+        $("#residential").css("color","black");
+        $("#shops").css("background","white");
+        $("#shops").css("color","black");
+        $("#office").css("background","rgb(106,180,255)");
+        $("#office").css("color","white");
+        $("#villa").css("background","white");
+        $("#villa").css("color","black");
+        $("#workshop").css("background","white");
+        $("#workshop").css("color","black");
+        $('#type').val('写字楼');
+    });
+    $("#villa").click(function(){
+        $("#residential").css("background","white");
+        $("#residential").css("color","black");
+        $("#shops").css("background","white");
+        $("#shops").css("color","black");
+        $("#office").css("background","white");
+        $("#office").css("color","black");
+        $("#villa").css("background","rgb(106,180,255)");
+        $("#villa").css("color","white");
+        $("#workshop").css("background","white");
+        $("#workshop").css("color","black");
+        $('#type').val('别墅');
+    });
+    $("#workshop").click(function(){
+        $("#residential").css("background","white");
+        $("#residential").css("color","black");
+        $("#shops").css("background","white");
+        $("#shops").css("color","black");
+        $("#office").css("background","white");
+        $("#office").css("color","black");
+        $("#villa").css("background","white");
+        $("#villa").css("color","black");
+        $("#workshop").css("background","rgb(106,180,255)");
+        $("#workshop").css("color","white");
+        $('#type').val('厂房');
+    });
+
+    $('#time1').click(function(){
+        $('#time1').css('background',"rgb(106,180,255)");
+        $('#time1').css('color','white');
+        $('#time2').css('background','white');
+        $('#time2').css('color','black');
+        $('#value').val('随时');
+    });
+    $('#time2').click(function(){
+        $('#time2').css('background',"rgb(106,180,255)");
+        $('#time2').css('color','white');
+        $('#time1').css('background',"white");
+        $('#time1').css('color','black');
+        $('#value').val('非工作时间');
+    });
+
+    //房源管理
+    $('#sc').click(function(){
+        $('#sc').css('background',"rgb(106,180,255)");
+        $('#sc').css('color','white');
+        $('#hc').css('color','white');
+        $('#hc').css('background',"white");
+    });
+    $('#hc').click(function(){
+        $('#hc').css('background',"rgb(106,180,255)");
+        $('#hc').css('color','white');
+        $('#sc').css('color','white');
+        $('#sc').css('background',"white");
+    });
+
+    //房源特色
+    $('#h0').click(function(){
+        $('#td').show();
+    });
+    $("#td li").click(function(){
+        var $this = $(this);
+        console.log($("#fyBox").find("span[data]").length);
+        if($("#fyBox").find("span[data]").length<3){
+            console.log($("#fyBox").find("span[data=" + $this.attr("value") + "]").length);
+            if ($("#fyBox").find("span[data=" + $this.attr("value") + "]").length == 0) {
+                var html = '<span data="' + $this.attr("value") + '">' + $this.attr("value") + '<i>X</i></span>';
+                $("#fyBox").append(html);
+                var inputH = '<input type="hidden" name="Sale_more_character[]" value="' + $this.attr("value") + '">';
+                $("#tsInputs").append(inputH);
+            }
+        }
+        if($("#fyBox").find("span[data]").length==3){
+            $("#td").css('display','none')
+        }
+    });
+    $("#td li").click(function(){
+        $("#td").hide();
+    })
+});

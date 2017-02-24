@@ -1,0 +1,347 @@
+{__NOLAYOUT__}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="gbk">
+    <title>合肥二手房_合肥二手房出售_合肥二手房价格-合房网二手房</title>
+    <meta name="keywords" content="合肥二手房,合肥二手房房价,合肥二手房价格,合肥二手房出售,合肥二手房房源">
+    <meta name="description" content="合肥二手房交易网-合肥市优质的二手房交易网站，为你提供合肥二手房交易、合肥二手房出售、合肥二手房房价信息，让你买卖二手房全程无忧，合肥人买卖二手房就上合房网二手房。">
+    <link rel="stylesheet" type="text/css" href="CSSPATH/hfhouse.css"/>
+    <link rel="stylesheet" type="text/css" href="CSSPATH/hfreg.css"/>
+    <script src="JSPATH/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#anhui").bind('mouseover',function(){
+                $("#anhuisheng").show();
+            })
+            $("#anhui").bind('mouseleave',function(){
+                $("#anhuisheng").hide();
+            })
+            $("#lianxi").bind('mouseover',function(){
+                $("#lianxikuang").show();
+            })
+            $("#lianxi").bind('mouseleave',function(){
+                $("#lianxikuang").hide();
+            })
+            $("#daohang").bind('mouseover',function(){
+                $("#daohangbiao").show();
+            })
+            $("#daohang").bind('mouseleave',function(){
+                $("#daohangbiao").hide();
+            })
+            $("#verify").bind('click',function(){
+                alert(Math.floor(Math.random() * 9999))
+            });
+            $('#xuanze4').click(function () {
+                $("#li_realName").show();
+                $("#li_card").hide();
+                $("#li_company").show();
+                $("#li_address").show();
+                $("#li_displayName").hide();
+                $("#li_phone").show();
+                $("#realName").attr("required","required")
+                $("#card").attr("required",false)
+                $("#company").attr("required","required")
+                $("#address").attr("required","required")
+                $("#phone").attr("required","required")
+            })
+            $('#xuanze2').click(function () {
+                $("#li_realName").show();
+                $("#li_card").show();
+                $("#li_company").show();
+                $("#li_address").show();
+                $("#li_displayName").hide();
+                $("#li_phone").hide();
+                $("#realName").attr("required","required")
+                $("#card").attr("required","required")
+                $("#company").attr("required","required")
+                $("#address").attr("required","required")
+                $("#phone").attr("required",false)
+            })
+            $('#xuanze1').click(function () {
+                $("#li_realName").hide();
+                $("#li_card").hide();
+                $("#li_company").hide();
+                $("#li_address").hide();
+                $("#li_displayName").hide();
+                $("#li_phone").hide();
+                $("#realName").attr("required",false)
+                $("#card").attr("required",false)
+                $("#company").attr("required",false)
+                $("#address").attr("required",false)
+                $("#phone").attr("required",false)
+            });
+            $("#mobile").bind('blur',function(){
+                var regMobile=/^1[358]\d{9}$/;
+                var obj=$("#mobile").val();
+                if(!regMobile.test(obj)){
+                    $("#text1").html("请输入正确移动电话");
+                }else{
+                    $("#text1").html("");
+                }
+            })
+            $("#passWord").bind('blur',function(){
+                var regPass=/^[a-zA-Z]\w{5,17}$/;
+                var obj=$("#passWord").val();
+                if(!regPass.test(obj)){
+                    $("#text2").html("请输入正确密码");
+                    $("#text3").focus();
+                }else{
+                    $("#text2").html("");
+                    $("#text3").focus();
+                }
+            })
+            $("#confirm_password").bind('blur',function(){
+                if($("#confirm_password").val()==$("#passWord").val()){
+                    $("#text3").html("");
+                }else{
+                    $("#text3").html("两次输入密码不一致");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<!--头部导航-->
+<div class="topNav">
+    <div class="topNav-width clearfix">
+        <div class="tnLeft">
+            <dd><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/index" style="color: white">找房网</a></h3></dd>
+            <dd id="anhui"><h3 style="font-size: 100%;"><a href="" style="color: white">安徽<i></i></a></h3><ul id="anhuisheng" class="xk_area" style="display: none;">
+                <em></em>
+                <a href="" title="合肥房地产交易网">合肥</a>
+                <a href="" title="芜湖房地产交易网">芜湖</a>
+                <a href="" title="蚌埠房地产交易网">蚌埠</a>
+                <a href="" title="淮南房地产交易网">淮南</a>
+                <a href="" title="淮北房地产交易网">淮北</a>
+                <a href="" title="铜陵房地产交易网">铜陵</a>
+                <a href="" title="安庆房地产交易网">安庆</a>
+                <a href="" title="黄山房地产交易网">黄山</a>
+                <a href="" title="阜阳房地产交易网">阜阳</a>
+                <a href="" title="宿州房地产交易网">宿州</a>
+                <a href="" title="滁州房地产交易网">滁州</a>
+                <a href="" title="六安房地产交易网">六安</a>
+                <a href="" title="宣城房地产交易网">宣城</a>
+                <a href="" title="巢湖房地产交易网">巢湖</a>
+                <a href="" title="池州房地产交易网">池州</a>
+                <a href="" title="亳州房地产交易网">亳州</a>
+                <a href="" title="天长房地产交易网">天长</a>
+                <a href="" title="桐城房地产交易网">桐城</a>
+                <a href="" title="宁国房地产交易网">宁国</a>
+                <a href="" title="马鞍山房地产交易网" target="_blank">马鞍山</a>
+            </ul>
+            </dd>
+            <dd><h3 style="font-size: 100%;"><a href="" style="color: white">移动产品<i></i></a></h3></dd>
+        </div>
+        <div class="tnRight">
+            <eq name="Think.session.userid" value="">
+                <dd><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/login" style="color: white">登录</a></h3></dd>
+                <else/>
+                <dd><h3 style="font-size: 100%;"><a href="" style="color: white">{$Think.session.username}</a></h3></dd>
+                <dd><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/logout" style="color: white">注销登录</a></h3></dd>
+            </eq>
+            <dd id="lianxi"><h3 style="font-size: 100%;"><a href=""  style="color: white">联系我们<i></i></a></h3>
+                <ul class="add_sc" id="lianxikuang" style="display: none;">
+                    <em class="top_jt"></em>
+                    <div class="fl" style="float: left;padding-right: 10px"><img height="150px" src="__PUBLIC__/image/2weima.jpg"></div>
+                    <div class="fr" style="float: left">
+                        <p class="f14">扫二维码直接进入技术团队群~</p>
+                        <p class="f14">服务电话 888-888-8888</p>
+                        <p class="f14">客服QQ群 584749590</p>
+                        <p class="f14">技术团队 合肥PHP技术研发二组</p>
+                        <a class="add_btn" style="cursor: pointer" onclick="alert('Ctrl+D 把找房网放入收藏夹 全面了解实时二手房资讯，方便快捷！')">加入收藏</a>
+                    </div>
+                    <div class="clear"></div>
+                </ul>
+            </dd>
+            <dd id="daohang"><h3 style="font-size: 100%;"><a href="" style="color: white;position: relative;padding-left: 30px;"><b></b>网站导航<i></i></a></h3>
+                <ul id="daohangbiao" class="web_nav" style="display: none;">
+                    <li><b class="f16"><a href="__APP__/Home/Index/index" target="_blank">二手房</a></b>
+                        <p class="f14">
+                            <a href="" >不动产评估</a>
+                            <a href="__APP__/Home/Sale/addData" target="_blank">出售</a>
+                            <a href="__APP__/Home/Lawyer/index" target="_blank">律师在线</a>
+                            <a href="__APP__/Home/Hire/addData" target="_blank">租房</a>		                    <a href="http://oldhouse.hfhouse.com/agent/" target="_blank">房产经纪人</a>
+                        </p>
+                    </li>
+                </ul>
+            </dd>
+        </div>
+    </div>
+</div>
+<!--logo-->
+<div class="wrap" >
+    <div class="logo p36">
+        <img src="IMAPATH/logo.png" style="float: left">
+        <span class="fr f28" style="float: left;border-left: 1px solid black;padding-left: 20px;">用户注册</span>
+    </div>
+    <div style="clear: both"></div>
+</div>
+<div class="line"></div>
+<div class="wrap clearfix mtb70">
+    <div class="slideTxtBox fl">
+        <div class="bd">
+            <ul>
+                <form class="cmxform" id="signupForm" method="post" action="registerup">
+                    <li>
+                        <span>用户类型：</span>
+                            <input type="radio" name="xuanze" id="xuanze1" value="1" checked="">
+                        <label class="f22 pd10 green" for="xuanze1" style="cursor:pointer">个人</label>
+                            <input type="radio" name="xuanze" id="xuanze2" value="2">
+                        <label class="f22 pd10 green" for="xuanze2" style="cursor:pointer">经纪人</label>
+                            <input type="radio" name="xuanze" id="xuanze4" value="4">
+                        <label class="f22 pd10 green" for="xuanze4" style="cursor:pointer">律师</label>
+                    </li>
+                    <li>
+                        <span>手机号：</span>
+                        <input type="text" placeholder="请输入手机号" name="user_phone" id="mobile" class="btnW402" required="required">&nbsp;
+                        <label for="mobile" class="error" id="text1" style="color: red"></label>
+                    </li>
+                    <li>
+                        <span>设置密码：</span>
+                        <input type="password" class="btnW402" placeholder="6位以上数字、字母组合" name="user_password1" id="passWord" required="required" >&nbsp;
+                        <label for="passWord" class="error" style="color: red" id="text2"></label>
+                    </li>
+                    <li>
+                        <span>确认密码：</span>
+                        <input type="password" class="btnW402" placeholder="再次输入密码" name="user_password" id="confirm_password" required="required" >&nbsp;
+                        <label for="confirm_password" id="text3" style="color: red" class="error"></label>
+                    </li>
+                    <li id="li_realName" style="display: none;">
+                        <span>真实姓名：</span>
+                        <input type="text" placeholder="请输入真实姓名" name="realName" id="realName" class="btnW402">&nbsp;
+                        <label for="realName" class="error"></label>
+                    </li>
+                    <li id="li_card" style="display: none;">
+                        <span>身份证号：</span>
+                        <input type="text" placeholder="请输入身份证号" name="card" id="card" class="btnW402"  >&nbsp;
+                        <label for="card" class="error"></label>
+                    </li>
+                    <li id="li_serviceArea"><span>服务地区：</span>
+                        <select class="btnW156 valid" required="required" id="serviceArea" name="user_region">
+                            <option value="包河区">包河区</option>
+                            <option value="蜀山区">蜀山区</option>
+                            <option value="庐阳区">庐阳区</option>
+                            <option value="瑶海区">瑶海区</option>
+                            <option value="高新区">高新区</option>
+                            <option value="政务区">政务区</option>
+                            <option value="经开区">经开区</option>
+                            <option value="其他">其他</option>
+                            <option value="滨湖区">滨湖区</option>
+                            <option value="新站区">新站区</option>
+                            <option value="肥东县">肥东县</option>
+                            <option value="肥西县">肥西县</option>
+                            <option value="长丰县">长丰县</option>
+                            <option value="北城新区">北城新区</option>
+                        </select>
+                        &nbsp;
+                    </li>
+                    <li id="li_company" style="display: none;">
+                        <span>所属公司：</span>
+                        <input type="text" placeholder="请输入所属公司" name="company" id="company" class="btnW402"  >&nbsp;
+                        <label for="company" class="error"></label>
+                    </li>
+                    <li id="li_phone" style="display: none;">
+                        <span>固定电话：</span>
+                        <input type="text" placeholder="请输入固定电话" name="telephone" id="phone" class="btnW402"  >&nbsp;
+                        <label for="phone" class="error"></label>
+                    </li>
+                    <li id="li_address" style="display: none;">
+                        <span>办公地址：</span>
+                        <input type="text" placeholder="请输入办公地址" name="address" id="address" class="btnW402" >&nbsp;
+                        <label for="address" class="error"></label>
+                    </li>
+                    <li>
+                        <span>校验码：</span>
+                        <input type="text" placeholder="请输入校验码" name="verifyCode" id="verifyCode" class="btnW100"  >&nbsp;
+                        <label for="verifyCode" class="error"></label>
+                        <i class="ml20">
+                            <img src="__URL__/captcha" id="verifyImgs" title="点击图片刷新" onclick="this.src='/Home/Index/captcha?'+Math.random()" style="cursor:pointer; margin-right:10px;">
+                            看不清点击图片换一张</a></i>
+                    </li>
+                    <li>
+                        <span>验证码：</span>
+                        <input type="text" class="btnW232" placeholder="请输入手机验证码" name="mobileCode" id="mobileCode">
+                        <input type="button" id="verify" class="f16 btnBlue btnW100" value="获取验证码">&nbsp;
+                        <label for="mobileCode" class="error"></label>
+                    </li>
+                    <li>
+                        <span>&nbsp;</span>
+                        <input type="submit" class="f16 btnBlue btnW246" value="立即注册">
+                    </li>
+                </form>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="fr zc_dl gray">-->
+        <!--<div class="f16">已有账号，请直接<a href="/login.html" class="btnBlue bnt">登 录</a></div>-->
+        <!--<div>您还可以使用其他帐号登录：</div>-->
+        <!--<div class="dl_hz"><img src="/data/assets/default/images/Connect_logo_qq.png"><a href="/Index/ThirdParty/weblogin/type/qqzone.html">腾讯QQ</a><img src="/data/assets/default/images/Connect_logo_sina.png"><a href="/Index/ThirdParty/weblogin/type/weibo.html">新浪微博</a><img src="/data/assets/default/images/Connect_logo_wechat.png"><a href="/Index/ThirdParty/weblogin/type/wechat.html">微信</a></div>-->
+    <!--</div>-->
+    <div style="clear: both"></div>
+</div>
+
+
+<!--尾部-->
+<div class="bottom">
+    <div class="wrap">
+        <div class="friend_link dgray14px9" id="hutia"><b>友情链接：</b>
+            <a href="http://newhouse.letfind.com.cn/" title="福州楼盘 " target="_blank">福州楼盘</a>
+            <a href="http://sz.fangjia.com/" title="深圳房价 " target="_blank">深圳房价</a>
+            <a href="http://www.tengfun.com/" title="滕州房产网 " target="_blank">滕州房产网</a>
+            <a href="http://www.dezhong365.com" title="德众金融 " target="_blank">德众金融</a>
+            <a href="http://www.qiuxingwang.cn/ " title="球星网 " target="_blank">球星网</a>
+            <a href="http://www.xinwenquan.org" title="娱乐新闻 " target="_blank">娱乐新闻</a>
+            <a href="http://www.xkhouse.com/" title="星空地产  " target="_blank">星空地产 </a>
+            <a href="http://www.guangyuanol.cn" title="川北在线 " target="_blank">川北在线</a>
+            <a href="http://zz.mnw.cn/" title="漳州新闻网 " target="_blank">漳州新闻网</a>
+            <a href="http://newhouse.fy.ahhouse.com/5155/" title="阜阳祥源文旅城 " target="_blank">阜阳祥源文旅城</a>            </div>
+        <div class="wx clearfix">
+            <dl>
+                <dt><img src="IMAPATH/xfh_ewm.png"></dt>
+                <dd><p class="f16"><b>星房惠移动客户端</b></p>
+                    <p class="f12">让房子在手中转起来</p>
+                    <p><a href="https://itunes.apple.com/cn/app/id786090055" target="_blank" rel="nofollow">
+                        <img src="IMAPATH/iphone.gif" width="71" height="24">
+                    </a>&nbsp;&nbsp;<a href="http://app.xkhouse.com/down.php" target="_blank" rel="nofollow">
+                        <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt><img src="IMAPATH/zlyl1.gif"></dt>
+                <dd><p class="f16"><b>左邻右里移动客户端</b></p>
+                    <p class="f12">友邻就在身边</p>
+                    <p><a href="http://nextdoors.com.cn/hfwzone.ipa" target="_blank" rel="nofollow">
+                        <img src="IMAPATH/iphone.gif" width="71" height="24">
+                    </a>&nbsp;&nbsp;<a href="http://nextdoors.com.cn/XKFriend.apk" target="_blank" rel="nofollow">
+                        <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="IMAPATH/ewm.gif"></dt>
+                <dd><p class="f16"><b>星空团官方微信</b></p>
+                    <p class="f12">手指移动，轻松掌握房产最新优惠活动</p>
+                </dd>
+            </dl>
+            <div style="clear: both"></div>
+        </div>
+        <div class="links-inner"><a target="_blank" href="http://www.hfhouse.com/company/about.html" rel="nofollow">公司简介</a><span>|</span><a target="_blank" href="http://www.nextdoors.com.cn/main.html" rel="nofollow">左邻右里</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/ggfw.html" rel="nofollow">广告服务</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/join.html" rel="nofollow">诚聘英才</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/contact.html" rel="nofollow">联系方法</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/licheng.html" rel="nofollow">精彩历程</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/sitemap.html" rel="nofollow">网站地图</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/privacy.html" rel="nofollow">版权声明</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/guwen.html" rel="nofollow">法律顾问</a><span>|</span><a target="_blank" href="http://aixin.xkhouse.com/" rel="nofollow">星空爱心慈善基金</a>
+        </div>
+
+        <div class="foot-copy dgray14px9">互联网经营许可证:
+            <a href="http://www.miibeian.gov.cn/" target="_blank"></a>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">皖ICP备16017591号</a>
+            <a href="http://news.hfhouse.com/html/225806.html" target="_blank">广播电视节目制作经营许可证</a>
+            <a href="http://hefei.cyberpolice.cn/" target="_blank">网警</a>
+            <br>? 2000-2016合肥星空投资管理有限公司　客服电话:400-888-8888　0551-68888888　Email:421032813@qq.com </div>
+        <div class="afd_com">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="896" height="35" hspace="0" vspace="0" style="margin:0 auto 3px;">
+                <param name="movie" value="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf">
+                <param name="quality" value="high"><param name="wmode" value="transparent"><embed style="margin:0 auto 3px;" src="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf" width="896" height="35" hspace="0" vspace="0" quality="high" type="application/x-shockwave-flash" wmode="transparent"></object>
+            <div id="ggbz" style="position:absolute;top:10px;right:10px;font-size:12px;color:#fff;z-index:10;background:black;line-height:1em;padding:2px;opacity:0.3">广告</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

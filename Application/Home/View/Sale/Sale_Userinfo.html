@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="gbk">
+    <title></title>
+    <style type="text/css">
+        .warp {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        body, div, p, table, td {
+            word-wrap: break-word;
+            word-break: normal;
+        }
+        body {
+            font: 14px/1.5 "Microsoft Yahei", "SimSun","Helvetica Neue","Helvetica","Arial","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei","sans-serif";
+            color: #333;
+            background-color: #fff;
+        }
+        .crumbs {
+            height: 60px;
+            line-height: 60px;
+        }
+        .clearfix {
+            clear: both;
+        }
+        .crumbs ul li {
+            float: left;
+            display: inline;
+        }
+        li {
+            list-style: none;
+        }
+        .details_tit {
+            padding: 15px 0 15px 0;
+        }
+        body, div, p, table, td {
+            word-wrap: break-word;
+            word-break: normal;
+        }
+        .details_tit_c {
+            float: right;
+            width: 240px;
+            margin-right: 8px;
+            text-align: right;
+        }
+        .details_tit_c {
+            float: right;
+            width: 240px;
+            margin-right: 8px;
+            text-align: right;
+        }
+        .details_tit_c .share {
+            width: 212px;
+            overflow: hidden;
+            float: right;
+        }
+        .details_tit_c .share span {
+            padding-right: 3px;
+            float: left;
+        }
+        .bdsharebuttonbox {
+            float: right;
+        }
+        .details_tit_l {
+            float: left;
+        }
+        .details_tit_l .loupan_tit {
+            padding: 0 0 10px 0;
+        }
+        .details_tit_l .loupan_tit h1 {
+            margin-right: 20px;
+            height: 32px;
+            line-height: 32px;
+            display: inline-block;
+        }
+        .info_tag {
+            margin-top: 5px;
+        }
+        .dgray12px9 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #999;
+        }
+        .info_tag dd {
+            float: left;
+        }
+        .cl {
+            clear: both;
+        }
+        .wrap {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .detail .wrap .info-pic {
+            width: 480px;
+            float: left;
+        }
+        .details_info_Box {
+            width: 480px;
+            height: 450px;
+            overflow: hidden;
+            position: relative;
+        }
+        .details_info_Box .bd {
+            position: relative;
+            z-index: 0;
+            width: 480px;
+            height: 358px;
+        }
+        .details_info_Box .bd img {
+            width: 480px;
+            height: 358px;
+            display: block;
+        }
+        img {
+            border: 0;
+            -ms-interpolation-mode: bicubic;
+        }
+        .details_info_Box .hd {
+            width: 480px;
+            height: 87px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+        .detail .wrap .info-mld {
+            width: 450px;
+            float: left;
+        }
+        .info_mation {
+            margin-bottom: 10px;
+        }
+        .info_mation ul {
+            float: left;
+            width: 435px;
+            margin-left: 15px;
+            border-bottom: 1px dashed #cecece;
+        }
+        .info_mation ul li {
+            color: #999;
+            line-height: 34px;
+            height: 34px;
+        }
+        .detail .wrap .info-tel {
+            width: 433px;
+            height: 90px;
+            background-color: #f6f6f6;
+            border: 1px dashed #ddd;
+            margin-left: 15px;
+        }
+        .detail .wrap .info-tel h2 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 5px;
+            margin-left: 20px;
+            font-weight: normal;
+        }
+        .wrap .info-mld .info-yuyue {
+            text-align: center;
+        }
+        div {
+            display: block;
+        }
+        .wrap .info-pic {
+            width: 480px;
+            float: left;
+        }
+        .detail .wrap .info-mld .info-yuyue {
+            text-align: center;
+        }
+        .detail .wrap .info-mld .info-yuyue a.u-b1 {
+            background-color: #ffa628;
+        }
+        .detail .wrap .info-mld .info-yuyue a.u-b1, .detail .wrap .info-mld .info-yuyue a.u-b2 {
+            display: inline-block;
+            margin-left: 14px;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .detail .wrap .info-right {
+            width: 250px;
+            padding-left: 20px;
+            float: right;
+        }
+        .detail .wrap .info-right .u-info {
+            text-align: center;
+            background-color: #f6f6f6;
+            padding-bottom: 14px;
+            padding-top: 24px;
+        }
+        .detail .wrap .info-right .u-info h3 {
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
+        }
+        .detail .wrap .info-right .u-info a {
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            background-color: #6ab4ff;
+            margin: 10px auto 0;
+        }
+        .detail .wrap .info-right .u-more {
+            height: auto;
+            background-color: #f6f6f6;
+            margin-top: 30px;
+        }
+        .detail .wrap .info-right .u-more h2 {
+            font-weight: normal;
+            font-size: 16px;
+            color: #333;
+            height: 49px;
+            border-bottom: 1px dashed #cecece;
+            line-height: 49px;
+            padding-left: 27px;
+            padding-right: 33px;
+        }
+        .detail .wrap .info-right .u-more table {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        body, div, p, table, td {
+            word-wrap: break-word;
+            word-break: normal;
+        }
+        table {
+            table-layout: fixed;
+            empty-cells: show;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .detail .wrap .g-main {
+            float: left;
+            width: 930px;
+        }
+        .detail .wrap .g-sld {
+            float: right;
+            width: 270px;
+        }
+        a {
+            color: #757575;
+            text-decoration: none;
+        }
+        .slideTxtBox {
+            width: 100%;
+            text-align: left;
+        }
+        .slideTxtBox .hd {
+            width: 900px;
+            height: 40px;
+            line-height: 40px;
+            z-index: 900;
+            padding: 0 10px 0 20px;
+            border-bottom: 1px solid #6ab4ff;
+            position: relative;
+            background-color: #fff;
+            top: 0;
+        }
+        .slideTxtBox .hd ul {
+            float: left;
+            position: absolute;
+            left: 0;
+            height: 32px;
+        }
+        .slideTxtBox .hd ul li.on {
+            height: 40px;
+            background: #6ab4ff;
+            color: #fff;
+        }
+        .slideTxtBox .hd ul li {
+            float: left;
+            padding: 0 25px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+        .slideTxtBox .bd .u-bd {
+            zoom: 1;
+            padding-top: 4px;
+        }
+        .detail .wrap .g-sld {
+            float: right;
+            width: 270px;
+        }
+        .detail .wrap .g-sld .m-more {
+            margin-left: 20px;
+            background-color: #f6f6f6;
+            padding-bottom: 10px;
+        }
+        .detail .wrap .g-sld .m-more h2 {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 27px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px dashed #cecece;
+        }
+        .detail .wrap .g-sld .m-more ul li:first-child {
+            margin-top: 23px;
+        }
+        .detail .wrap .g-sld .m-more>ul>li {
+            min-height: 81px;
+        }
+        .mt40 {
+            margin-top: 40px;
+        }
+        .detail .wrap .g-main .slideTxtBox .bd .u-bd3 table {
+            width: 100%;
+            border: 1px solid #cecece;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+        }
+        .slideTxtBox .bd .u-bd {
+            zoom: 1;
+            padding-top: 4px;
+        }
+        .detail .wrap .g-main .slideTxtBox .bd .u-bd4 h2 {
+            font-size: 16px;
+            color: #666;
+            font-weight: normal;
+        }
+        .mapFind {
+            width: 930px;
+            height: 500px;
+            background-color: #0d6ed0;
+            position: relative;
+        }
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .user_wrap {
+            margin-bottom: 35px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+        .user_wrap ul.urer_list {
+            background: #fff;
+            padding: 0 25px 25px 25px;
+        }
+        .detail .wrap .g-main .slideTxtBox .bd .u-bd5 form {
+            width: 877px;
+            margin: 0 auto;
+        }
+        .detail .wrap .g-main .slideTxtBox .bd .u-bd5 form textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ddd;
+            resize: none;
+        }
+        textarea {
+            overflow: auto;
+            vertical-align: top;
+        }
+        .detail .wrap .g-sld {
+            float: right;
+            width: 270px;
+        }
+        .detail .wrap .g-sld .m-more {
+            margin-left: 20px;
+            background-color: #f6f6f6;
+            padding-bottom: 10px;
+        }
+        .detail .wrap .g-sld .m-more h2 {
+            height: 50px;
+            line-height: 50px;
+            padding-left: 27px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px dashed #cecece;
+        }
+        .detail .wrap .g-sld .m-more ul li:first-child {
+            margin-top: 23px;
+        }
+        .detail .wrap .g-sld .m-more>ul>li {
+            min-height: 81px;
+        }
+        .detail .wrap .g-sld .m-more ul li img {
+            float: left;
+            margin-right: 7px;
+        }
+        .wrap_love {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .wrap_love h3 {
+            padding: 0 0 20px 0;
+            font-size: 28px;
+            font-weight: normal;
+        }
+        .wrap_love ul li {
+            width: 225px;
+            overflow: hidden;
+            line-height: 30px;
+            margin: 0 0 20px 0;
+            padding-right: 19px;
+            float: left;
+        }
+        .wrap_love ul {
+            width: 1220px;
+        }
+        .detail .wrap .g-main .slideTxtBox .bd .u-bd2 .u-img {
+            width: 576px;
+            height: auto;
+            margin: 25px auto 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            font-size: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('#commentbut').bind("click",function(){
+                $.ajax('__URL__/commentup',{
+                    'data':{
+                        'comment_content':$("#comment").val(),
+                        'info_id':'{$data.sale_id}'
+                    },
+                    'type':'post',
+                    'success':function(){
+                        $.ajax("__URL__/clist",{
+                            'data':{
+                                'id':'{$data.sale_id}'
+                            },
+                            'type':'post',
+                            success:function(data){
+                                $(".urer_list").html(data)
+                            }
+                        })
+                    },
+                    'dataType':'text'
+                });$("#comment").val('');
+            })
+        })
+    </script>
+</head>
+<body class="detail">
+<div class="warp">
+    <div class="crumbs">
+        <ul class="clearfix">
+            <li><a href="javscript">您当前位置：</a></li>
+            <li><a href="/">合肥二手房&nbsp;&gt;&nbsp;</a></li>
+            <li><a href="/sale/">出售房源&nbsp;&gt;</a></li>
+            <li><a href="#">{$data.sale_house_area}&gt;</a></li>
+            <li><a href="#">[{$data.sale_house_name}]&gt;</a></li>
+            <li>房源详情</li>
+        </ul>
+    </div>
+</div>
+<!--标题-->
+<div>
+    <div class="wrap">
+        <div class="details_tit">
+
+            <div class="details_tit_c">
+                <br><br>
+                <div class="share clearfix">
+                    <span><a href="#" style="color:#999;line-height:29px;">分享到：</a></span>
+                    <div class="bdsharebuttonbox bdshare-button-style2-24" data-bd-bind="1477407524104">
+                        <a href="#" class="bds_tqq" id="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                        <a href="#" class="bds_tsina" id="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_weixin" id="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                        <a href="#" class="bds_qzone" id="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                        <a href="#" class="bds_sqq" id="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                    </div>
+                    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                </div>
+
+            </div>
+
+            <div class="details_tit_l">
+                <div class="loupan_tit"><h1 class="black26px">{$data.sale_house_title}</h1></div>
+                <dl class="info_tag dgray12px9">
+                    <dd>
+                        <a href="javascript:void(0);">配套齐全</a>                    </dd><dd>
+                    <a href="javascript:void(0);">婚房</a>                    </dd><dd>
+                    <a href="javascript:void(0);">学区房</a>                    </dd>                <dd>
+                    发布时间：{:date("Y-m-d", $data['sale_date'])}  今日更新                </dd>
+                </dl>
+            </div>
+
+            <div class="cl"></div>
+        </div>
+    </div>
+</div>
+<!--房屋介绍-->
+<div class="wrap clearfix" style="height:510px;">
+    <div class="info-pic">
+        <!-- 轮播图 -->
+        <div id="details_info_Box" class="details_info_Box ">
+            <div class="bd">
+                <ul style="position: relative; width: 480px; height: 358px;">
+                    <li style="position: absolute; width: 480px; left: 0px; top: 0px; display: none;">
+                        <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" height="358" width="480">
+                    </li>
+                    <li style="position: absolute; width: 480px; left: 0px; top: 0px; display: none;">
+                        <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195643_75842.jpg" height="358" width="480">
+                    </li>
+                    <li style="position: absolute; width: 480px; left: 0px; top: 0px; display: none;">
+                        <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_18736.jpg" height="358" width="480">
+                    </li>
+                    <li style="position: absolute; width: 480px; left: 0px; top: 0px;">
+                        <img src="/Uploads/{$data['sale_house_photo_1']}" height="358" width="480">
+                    </li>
+                    <li style="position: absolute; width: 480px; left: 0px; top: 0px; display: none;">
+                        <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" height="358" width="480">
+                    </li>
+                </ul>
+            </div>
+            <div class="hd">
+                <a class="prev" href="javascript:void(0)"></a>
+                <div class="tempWrap" style="display: none">
+                    <div class="tempWrap" style="overflow:hidden; position:relative; width:492px"><ul style="width: 615px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+                        <li class="" style="float: left; width: 113px;">
+                            <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" height="358" width="480">
+                        </li>
+                        <li style="float: left; width: 113px;">
+                            <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195643_75842.jpg">
+                        </li>
+                        <li style="float: left; width: 113px;">
+                            <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_18736.jpg">
+                        </li>
+                        <li style="float: left; width: 113px;" class="on">
+                            <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_45548.jpg">
+                        </li>
+                        <li style="float: left; width: 113px;">
+                            <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg">
+                        </li>
+                    </ul></div>
+                </div>
+                <a class="next" href="javascript:void(0)"></a>
+            </div>
+        </div>
+    </div>
+    <div class="info-mld">
+        <!-- 房屋信息 -->
+        <div class="info_mation">
+            <ul>
+                <li>总 价：<span class="red20px ml10" style="color: red;font-size: 20px;font-style: inherit">{$data.sale_house_price}万元</span>
+
+                </li>
+                <li>
+                    <strong>参考首付：</strong><span class="ml10 dgray14px6">约60万元</span>
+                </li>
+                <li style="height:auto;">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>户型：</td>
+                            <td width="140"><span class="ml10 dgray14px6">{$data.sale_house_bedroom}{$data.sale_house_parlor}</span></td>                                <td><strong>面    <i>积：</i></strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_house_acreage}㎡</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>产权性质：</strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_type}</span></td>
+                            <td><strong>物业类型：</strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_type}</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>楼    层：</strong></td>
+                            <td><span class="ml10 dgray14px6">第{$data.sale_house_floor}层/共{$data.sale_house_total}层</span></td>
+                            <td><strong>建筑年代：</strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_more_year}年</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>朝    向：</strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_house_orirnt}</span></td>
+                            <td><strong>装    修：</strong></td>
+                            <td><span class="ml10 dgray14px6">{$data.sale_house_decorate}</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <strong>小区名称：</strong>
+                    <span class="ml10 dgray14px6">{$data.sale_house_name}</span>
+                </li>                <li>
+                <strong>地    址：</strong>
+                <span class="ml10 dgray14px6 subStr" limit="20" title="">{$data.sale_house_address}  ...</span>
+            </li>
+                <li>
+                    <strong>学    <i>区：</i></strong>
+                    <span class="ml10 dgray14px6">
+                                                                    </span>
+                </li>                <li>
+                <strong>看房时间：</strong>
+                <span class="ml10 dgray14px6">{$data.sale_more_look}</span>
+            </li>
+            </ul>
+            <div class="cl"></div>
+        </div>
+        <!-- 联系电话 -->
+        <div class="info-tel">
+            <eq name="ple" value="2">
+                <div class="u-info">
+                    <h2>{$per.mid_realname}&nbsp;&nbsp;&nbsp;&nbsp;{$per.mid_phone}</h2>
+                </div>
+                <else/>
+                <div class="u-info">
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;{$per.user_phone}</h2>
+                </div>
+            </eq>
+            <!-- <a href="">免费通话</a> -->
+
+            <br>
+            <h3 style="margin-left: 20px; color: #9A9A9A;">联系我时，请说是在找房网上看到的，3Q！</h3>
+        </div>        <div class="info-yuyue clearfix">
+        <a href="javascript:;" class="u-b1 bespeak">预约看房</a>
+        <!-- <a href="javascript:;" class="u-b2 btn-jvbao">举报虚假</a>-->
+    </div>
+    </div>
+    <div class="info-right">
+        <eq name="ple" value="1">
+            <div class="u-info">
+                <img src="/Public/image/sideAgent.png" class="photoIsError" height="112" width="80" alt="">
+                <h3>找房网友&nbsp;&nbsp;{$per.user_name}</h3>
+                <h3>{$per.user_phone}</h3>
+                <a target="_blank" href="/Home/Agent/agent_shop/id/{$per.mid_id}">进入店铺</a>
+            </div>
+            <else/>
+            <div class="u-info">
+                <img src="IMAPATH/u-pic.png" class="photoIsError" height="112" width="80" alt="">
+                <h3>经纪人&nbsp;&nbsp;{$per.mid_realname}</h3>
+                <h3>{$per.mid_company}</h3>
+                <a target="_blank" href="/Home/Agent/agent_shop/id/{$per.mid_id}">进入店铺</a>
+            </div>
+        </eq>
+
+        <div class="u-more">
+            <h2>本小区其他房源<a href="">更多&gt;</a></h2>
+            <table>
+                <tbody>
+                <tr>
+                    <td><a href="/sale/5532097.html" target="_blank">三室</a></td>
+                    <td><a href="/sale/5532097.html" target="_blank">145.00㎡</a></td>
+                    <td><a href="/sale/5532097.html" target="_blank">240.00万</a></td>
+                </tr><tr>
+                    <td><a href="/sale/5559778.html" target="_blank">三室</a></td>
+                    <td><a href="/sale/5559778.html" target="_blank">135.00㎡</a></td>
+                    <td><a href="/sale/5559778.html" target="_blank">153.00万</a></td>
+                </tr><tr>
+                    <td><a href="/sale/5561269.html" target="_blank">三室</a></td>
+                    <td><a href="/sale/5561269.html" target="_blank">126.00㎡</a></td>
+                    <td><a href="/sale/5561269.html" target="_blank">140.00万</a></td>
+                </tr><tr>
+                    <td><a href="/sale/5563377.html" target="_blank">二室</a></td>
+                    <td><a href="/sale/5563377.html" target="_blank">76.00㎡</a></td>
+                    <td><a href="/sale/5563377.html" target="_blank">110.00万</a></td>
+                </tr><tr>
+                    <td><a href="/sale/5563376.html" target="_blank">二室</a></td>
+                    <td><a href="/sale/5563376.html" target="_blank">76.00㎡</a></td>
+                    <td><a href="/sale/5563376.html" target="_blank">110.00万</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<!--房屋内容-->
+<div class="wrap clearfix">
+    <div class="g-main">
+        <a href="" name="bd0"></a>
+        <div class="slideTxtBox">
+
+            <div class="hd" style="position: relative;">
+                <ul>
+                    <li class="on" id="bd1">出售简介</li>
+                    <li class="" id="bd2">房源图片</li>
+                    <li class="" id="bd3">小区信息</li>
+                    <li class="" id="bd4">位置及周边</li>
+                    <li class="" id="bd5">房源点评</li>
+                </ul>
+            </div>
+
+            <div class="bd noSelect">
+                <a href="" name="bd1"></a>
+                <div style="" class="u-bd u-bd1">
+
+                    <h1 class="mt40">配套设施</h1>
+                    <h2>
+                        {$data.sale_more_facility}
+                    </h2>
+                    <h1 class="mt40">房源简介信息</h1>
+                    <h3>{$data.sale_house_information}</h3>
+                </div>
+                <a href="" name="bd2"></a>
+                <div style="" class="u-bd u-bd2">
+                    <h1 class="mt40">房源图片</h1>
+                    <div class="u-img">
+                        <li><img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" height="358" width="480"></li>
+                        <p>封面图</p>
+                    </div>
+                    <volist name="tmpPhotoM" id="row" key="k">
+                        <if condition="$row">
+                        <div class="u-img">
+                            <img src="/Uploads/{$row}"  class="lazy" alt="" style="display: inline;height: 300px">
+                            <p>室内</p>
+                        </div>
+                            <else/>
+                        </if>
+                    </volist>
+                    <div class="u-img" style="display: none">
+                    <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195643_75842.jpg" data-original="http://upload.xkhouse.com/attachment/image/20160812/20160812195643_75842.jpg" class="lazy" alt="" style="display: inline;">
+                    <p>室内</p>
+                </div>
+                    <div class="u-img" style="display: none">
+                    <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_18736.jpg" data-original="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_18736.jpg" class="lazy" alt="" style="display: inline;">
+                    <p>室内</p>
+                </div>
+                    <div class="u-img" style="display: none">
+                    <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_45548.jpg" data-original="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_45548.jpg" class="lazy" alt="" style="display: inline;">
+                    <p>室内</p>
+                </div>
+                    <div class="u-img" style="display: none">
+                    <img src="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" data-original="http://upload.xkhouse.com/attachment/image/20160812/20160812195641_15268.jpg" class="lazy" alt="" style="display: inline;">
+                    <p>室内</p>
+                </div>        </div>        <a href="" name="bd3"></a>
+
+                <a href="" name="bd4"></a>
+                <div style="" class="u-bd u-bd4">
+                    <h1 class="mt40">位置及周边</h1><br>
+                    <h2>位置：合肥 -  - 合肥市政务新区南二环路与东至路交叉口东南侧</h2>
+                    <!--<h2>交通：163、145、902、122、1355</h2><br>-->
+                    <div class="mapFind" style="display: none">
+                        <div id="container" class="amap-container">
+                            <object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="about:blank"></object>
+                            <div class="amap-maps">
+                            <div class="amap-drags">
+                                <div class="amap-layers" style="-webkit-transform: translateZ(0px);">
+                                    <canvas class="amap-layer" width="930" height="500" style="position: absolute; z-index: 0; top: 0px; left: 0px;"></canvas>
+                                    <div style="position: absolute; z-index: 120; top: 250px; left: 465px;">
+                                        <div class="amap-marker" style="top: -73px; left: 124px; z-index: 100; -webkit-transform: rotate(0deg); -webkit-transform-origin: 12px 12px 0px; display: block;">
+                                            <div class="amap-icon" style="position: absolute; overflow: inherit; opacity: 1;">
+                                                <img src="http://vdata.amap.com/icons/b18/1/2.png" style="top: 0px; left: 0px;"></div>
+                                        </div>
+                                        <div class="amap-marker" style="top: -74px; left: 130px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;">
+                                            <div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">1</div>
+                                            </div>
+                                        </div>
+                                        <div class="amap-marker" style="top: -154px; left: 116px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;">
+                                            <div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">2</div></div></div><div class="amap-marker" style="top: -116px; left: 49px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">3</div></div></div><div class="amap-marker" style="top: -139px; left: 60px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">4</div></div></div><div class="amap-marker" style="top: -120px; left: 215px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">5</div></div></div><div class="amap-marker" style="top: -168px; left: 77px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">6</div></div></div><div class="amap-marker" style="top: -169px; left: 190px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">7</div></div></div><div class="amap-marker" style="top: -115px; left: 230px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">8</div></div></div><div class="amap-marker" style="top: -115px; left: 255px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">9</div></div></div><div class="amap-marker" style="top: -109px; left: -5px; z-index: 101; -webkit-transform: rotate(0deg); -webkit-transform-origin: 9px 31px 0px; display: block;"><div class="amap-marker-content" style="opacity: 1;"><div class="amap_lib_placeSearch_poi">10</div></div></div></div><canvas width="930" height="500" style="position: absolute; z-index: 99; height: 500px; width: 930px; top: 0px; left: 0px;"></canvas><canvas width="930" height="500" style="position: absolute; z-index: 110; top: 0px; left: 0px;"></canvas></div><div class="amap-overlays"></div></div></div><div style="display: none;"></div><div class="amap-controls"></div><a class="amap-logo" href="http://gaode.com" target="_blank"><img src="http://webapi.amap.com/theme/v1.3/autonavi.png"></a><div class="amap-copyright" style="display: none;"><!--v1.3.19--> ? 2016 AutoNavi <span class="amap-mcode">- GS(2016)710号</span></div></div>
+
+                    </div>
+                    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                    <html xmlns="http://www.w3.org/1999/xhtml">
+                    <head>
+                        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+                        <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+                        <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+                        <title>百度地图API自定义地图</title>
+                        <!--引用百度地图API-->
+                        <style type="text/css">
+                            html,body{margin:0;padding:0;}
+                            .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+                            .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+                        </style>
+                        <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+                    </head>
+
+                    <body>
+                    <!--百度地图容器-->
+                    <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+                    </body>
+                    <script type="text/javascript">
+                        //创建和初始化地图函数：
+                        function initMap(){
+                            createMap();//创建地图
+                            setMapEvent();//设置地图事件
+                            addMapControl();//向地图添加控件
+                        }
+
+                        //创建地图函数：
+                        function createMap(){
+                            var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                            var point = new BMap.Point(117.278363,31.884931);//定义一个中心点坐标
+                            map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+                            window.map = map;//将map变量存储在全局
+                        }
+
+                        //地图事件设置函数：
+                        function setMapEvent(){
+                            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+                            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                            map.enableKeyboard();//启用键盘上下左右键移动地图
+                        }
+
+                        //地图控件添加函数：
+                        function addMapControl(){
+                            //向地图中添加缩放控件
+                            var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+                            map.addControl(ctrl_nav);
+                            //向地图中添加缩略图控件
+                            var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+                            map.addControl(ctrl_ove);
+                            //向地图中添加比例尺控件
+                            var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+                            map.addControl(ctrl_sca);
+                        }
+
+
+                        initMap();//创建和初始化地图
+                    </script>
+                    </html>
+                </div>
+                <a href="" name="bd5"></a>
+
+                <div style="" class="u-bd u-bd5">
+                    <h1>房源点评</h1>
+                    <div class="user_wrap">
+                        <ul class="urer_list">
+                           <li style="padding: 25px 0 12px 0;border-bottom: 1px dashed #ddd;">
+                               <div style="float: left;width: 75px;padding-left: 10px;margin-right: 20px;">
+                                   <img src="/Public/image/details_32.gif">
+                               </div>
+                               <div style="width: 1030px;line-height: 26px;color: #666;">
+                                   <br/>
+                                   <p>这房子真心不错哦</p>
+                               </div>
+                               <div style="clear: both"></div>
+                           </li>
+                        </ul>
+
+                        <form id="commentform" action="__URL__/commentup" method="post">
+                            <textarea name="comment_content" id="comment" placeholder="输入点评内容..."></textarea>
+                            <p class="clearfix">
+                                <input type="hidden" name="info_id" id="oId" value="{$data.sale_id}">
+                                <input type="button" id="commentbut" value="提交点评">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $.ajax("__URL__/clist",{
+                'data':{
+                    'id':'{$data.sale_id}'
+                },
+                'type':'post',
+                success:function(data){
+                    $(".urer_list").html(data)
+                }
+            })
+        })
+    </script>
+    <style>
+        .detail .wrap .g-sld .m-more>ul>li{min-height: 81px;}
+    </style>
+    <div class="g-sld">
+        <div class="m-more">
+            <h2>附近同类房源</h2>
+            <ul>
+                <li>
+                    <a href="/sale/5565249.html">
+                        <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024190515_73822.jpg" height="78" width="100" alt="">
+                        <p>庐阳区 - 金域蓝湾  </p>
+                        <p>三室二厅  装修/毛坯</p>
+                        <i>280.00万</i>
+                    </a>
+                </li><li>
+                <a href="/sale/5565248.html">
+                    <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024185849_36082.jpg" height="78" width="100" alt="">
+                    <p>庐阳区 - 水木春城  </p>
+                    <p>三室二厅  装修/毛坯</p>
+                    <i>255.00万</i>
+                </a>
+            </li><li>
+                <a href="/sale/5565128.html">
+                    <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024160440_98766.jpg" height="78" width="100" alt="">
+                    <p>庐阳区 - 瑞地祥和府  </p>
+                    <p>二室二厅  装修/毛坯</p>
+                    <i>115.00万</i>
+                </a>
+            </li><li>
+                <a href="/sale/5565139.html">
+                    <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024161800_52614.jpg" height="78" width="100" alt="">
+                    <p>庐阳区 - 亳州城B区  </p>
+                    <p>三室二厅  毛坯</p>
+                    <i>135.00万</i>
+                </a>
+            </li><li>
+                <a href="/sale/5565143.html">
+                    <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024162005_34742.jpg" height="78" width="100" alt="">
+                    <p>庐阳区 - 和昌都汇华郡  </p>
+                    <p>二室二厅  装修/毛坯</p>
+                    <i>120.00万</i>
+                </a>
+            </li>        </ul>
+        </div>
+        <br>
+    </div>
+</div>
+<!--可能感兴趣的-->
+<div class="wrap_love">
+    <h3 class="dgray24px">可能感兴趣的房源</h3>
+    <ul>
+        <li>
+            <a href="/sale/5565249.html" target="_blank">
+                <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024190515_73822.jpg" height="170" width="225" alt="金域蓝湾">                    <p>金域蓝湾</p>
+            </a>
+            <h5 class=" clearfix"><a href="/sale/5565249.html" target="_blank">金域蓝湾</a><span>280.00万</span></h5>
+            <p class="">三室二厅 | 135.00㎡ | 装修/毛坯</p>
+        </li><li>
+        <a href="/sale/5565248.html" target="_blank">
+            <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024185849_36082.jpg" height="170" width="225" alt="水木春城">                    <p>水木春城</p>
+        </a>
+        <h5 class=" clearfix"><a href="/sale/5565248.html" target="_blank">水木春城</a><span>255.00万</span></h5>
+        <p class="">三室二厅 | 138.00㎡ | 装修/毛坯</p>
+    </li><li>
+        <a href="/sale/5565128.html" target="_blank">
+            <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024160440_98766.jpg" height="170" width="225" alt="瑞地祥和府">                    <p>瑞地祥和府</p>
+        </a>
+        <h5 class=" clearfix"><a href="/sale/5565128.html" target="_blank">瑞地祥和府</a><span>115.00万</span></h5>
+        <p class="">二室二厅 | 60.00㎡ | 装修/毛坯</p>
+    </li><li>
+        <a href="/sale/5565139.html" target="_blank">
+            <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024161800_52614.jpg" height="170" width="225" alt="亳州城B区">                    <p>亳州城B区</p>
+        </a>
+        <h5 class=" clearfix"><a href="/sale/5565139.html" target="_blank">亳州城B区</a><span>135.00万</span></h5>
+        <p class="">三室二厅 | 95.00㎡ | 毛坯</p>
+    </li><li>
+        <a href="/sale/5565143.html" target="_blank">
+            <img src="http://upload.xkhouse.com/attachment/image/20161024/20161024162005_34742.jpg" height="170" width="225" alt="和昌都汇华郡">                    <p>和昌都汇华郡</p>
+        </a>
+        <h5 class=" clearfix"><a href="/sale/5565143.html" target="_blank">和昌都汇华郡</a><span>120.00万</span></h5>
+        <p class="">二室二厅 | 89.00㎡ | 装修/毛坯</p>
+    </li>        <div class="cl"></div>
+    </ul>
+</div>
+</body>
+</html>

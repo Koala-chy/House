@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/public/js/baiduditu/style/demo.css" rel="stylesheet" type="text/css"/>
+    <!--javascript-->
+    <script src="/public/js/baiduditu/scripts/area.js" type="text/javascript"></script>
+    <script src="/public/js/baiduditu/scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="/public/js/baiduditu/scripts/demo.js" type="text/javascript"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=E4vYNbh4LBcHlmzE9dmE5KVv2NMxvFBY"></script>
+    <link rel="stylesheet" type="text/css" href="/public/css/2.css"/>
+    <meta charset="gbk">
+    <title></title>
+</head>
+<body onload="loadPlace(117.27,31.88);">
+<div class="div">
+    <!-- 导航1-->
+    <volist id="row" name="data">
+    <div class="div1">
+        <span class="span1_1">您当前位置：<a href="#">合肥二手房</a> > 出售房源><a href="#">【{$data.sale_house_area}】></a><a href="#">【{$data.sale_house_name}】></a>房源详情</span>
+    </div>
+
+<!--位置-->
+    <div class="div2">
+       <h1>{$data.sale_house_title}</h1>
+        <p><a href="#"><span>{$data.sale_more_look}</span></a><a href="#"><span>{$data.sale_more_facility}</span></a>
+            发布时间：{$data.sale_date}更新于23天前</p>
+    </div>
+
+    <div class="div3">
+        <volist class="div3_1">
+            <div class="div3_1_1">
+<img src="{$data.sale_house_photo}"/>
+                <div class="div3_1_11">
+                    <div class="div3_1_111">
+                    <p><span>总价</span>:<span>{$data.sale_house_price}万元</span></p>
+                    <p><span>户型:</span><span>{$data.sale_house_bedroom}{$data.sale_house_parlor}</span>
+                        <span>面积:</span><span>{$data.sale_house_acreage}㎡</span></p>
+                    <p><span>产权性质：</span><span>{$data.sale_type}</span><span>物业类型:</span>
+                        <span>{$data.sale_type}</span></p>
+                    <p><span>楼层:</span><span>第{$data.sale_house_floor}层/共{$data.sale_house_total}层</span>
+                        <span>建筑年代：</span><span>{$data.sale_more_year}年</span></p>
+                    <p><span>朝向：</span><span>{$data.sale_house_orirnt}</span><span>装修:</span><span>{$data.sale_house_decorate}</span></p>
+                    <p><span>小区名称:</span><span>{$data.sale_house_name}</span></p>
+                    <p><span>学区：</span><span>{$data.Sale_house_address}</span></p>
+                    <p><span>看房时间：</span><span>{$data.sale_more_look}</span></p>
+                    </div>
+                    <div class="div3_1_112">
+<div><h3>{$data.sale_tell}</h3><p >联系我时，请说是在合房网上看到的，3Q！</p></div>
+                    </div>
+                    <div class="span3_1_113"><a href="#">预约看房</a></div>
+                </div>
+            </div>
+            <!-- 导航3-->
+            <div class="div4">
+                <span class="span4_1">出售简介</span>
+                <span class="span4_2" ><a href="#b">小区信息</a></span>
+                <span class="span4_2" ><a href="#c">位置及周边</a></span>
+                <span class="span4_2"><a href="#d">房源点评</a></span>
+            </div>
+            <!-- 内容1-->
+            <h3>配套设施</h3>
+            <div class="div5">{$data.sale_more_facility}</div>
+            <h3>房屋简介信息</h3>
+            <div class="div5">{$data.sale_house_address}</div>
+            <h3><a name="b">小区信息</a></h3>
+            <div class="div5">{$data.sale_house_information}</div>
+            <h3>小区相册</h3>
+            <div class="div5"><img src="/Uploads/{$data.sale_house_photo}"></div>
+            <h3><a name="c">位置及周边</a></h3>
+            <div class="demo_main" >
+                <fieldset class="demo_content" style="border:0px;width:935px;">
+                    <div>
+                        省份：
+                        <select name="province">
+                        </select>
+                        城市：<select name="city">
+                    </select>
+                        县区：<select name="county" id="county">
+                    </select>
+
+                        <input type="text" name="fname" id="suggestId"/>
+
+                        <button onclick="setPlace()"/>
+
+                        <span class="tips" style="color: green">请选择地区</span>
+
+                    </div>
+                    <div >
+
+                        <!--<input type="text" readonly="" id="pointInput"-->
+                        <!--style="display:inline-block;background:#EBEBE4;border:#7F9DB9 solid 1px;-->
+                        <!--color:#555;width:160px;height:30px;line-height:30px;font-size:14px;font-weight:700">-->
+                        <!--<button type="button" style="clear: both"  onclick="add_overlay()">点击</button>-->
+                    </div>
+                    <div style="min-height: 450px; margin-top: 5px; width:930px;float:left;" id="map">
+                    </div>
+                </fieldset>
+                <script type="text/javascript">
+
+                    var map = new BMap.Map("map"); // 创建Map实例
+                    var point;
+                    //根据经纬度显示地区
+                    function loadPlace(longitude, latitude, level) {
+                        if (parseFloat(longitude) > 0 || parseFloat(latitude) > 0) {
+                            level = level || 12;
+                            //绘制地图
+
+                            point = new BMap.Point(longitude, latitude); //地图中心点
+                            map.centerAndZoom(point, level); // 初始化地图,设置中心点坐标和地图级别。
+                            map.setCurrentCity("北京");
+                            map.enableScrollWheelZoom(true); //启用滚轮放大缩小
+                            //向地图中添加缩放控件
+                            var ctrlNav = new window.BMap.NavigationControl({
+                                anchor: BMAP_ANCHOR_TOP_LEFT,
+                                type: BMAP_NAVIGATION_CONTROL_LARGE
+                            });
+                            map.addControl(ctrlNav);
+
+                            //向地图中添加缩略图控件
+                            var ctrlOve = new window.BMap.OverviewMapControl({
+                                anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+                                isOpen: 1
+                            });
+                            map.addControl(ctrlOve);
+
+                            //向地图中添加比例尺控件
+                            var ctrlSca = new window.BMap.ScaleControl({
+                                anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                            });
+                            map.addControl(ctrlSca);
+
+
+                        }
+                    }
+
+                    function setPlace() {
+                        map.clearOverlays();    //清除地图上所有覆盖物
+                        var myGeo = new BMap.Geocoder();// 将地址解析结果显示在地图上,并调整地图视野
+                        myGeo.getPoint(document.getElementById('suggestId').value, function (p) {
+                            if (p) {
+                                lat = p.lat;
+                                lng = p.lng;
+                                map.centerAndZoom(p, 12);
+//                    map.addOverlay(new BMap.Marker(p));
+                                alert("地址："+lat+lng);
+                            }
+                            else {
+
+                                alert("您选择地址没有解析到结果!");
+                            }
+                        }, document.getElementById('county').value);
+
+                    }
+
+                    var inputBox;
+                    map.addEventListener("click",function(e){
+                        alert(e.point.lng + "," + e.point.lat);
+                        inputBox = document.getElementById("pointInput");
+                        inputBox.value = e.point.lng + "," + e.point.lat;
+
+                    });
+
+
+                    //添加覆盖物
+                    function add_overlay(){
+                        marker   = new BMap.Marker(new BMap.Point(inputBox.value)); // 创建点
+                        map.addOverlay(marker);            //增加点
+
+                    }
+                    //清除覆盖物
+                    function remove_overlay(){
+                        map.clearOverlays();
+                    }
+                </script>
+            </div>
+
+            <h3><a name="d">房源点评</a></h3>
+            <div class="div6">
+               <textarea cols="100"rows="6" placeholder="请输入点评内容" style="border:1px dashed #ddd;margin-left:70px;margin-toP:50px;"></textarea>
+                <div class="div6_1"><span >验证码:</span><input type="text" style="width:100px;height:30px;border:1px dashed #ddd;"/><input type="submit" value="提交点评"style="width:100px;height:30px;border:1px dashed #ddd;background:#6ab4ff;margin-left:50px;"/></div>
+           </div>
+            </div>
+        <div class="div3_2">
+            <div class="div3_2_1">
+<img src="/public/image/touxiang.png"/>
+                <h2>普通用户</h2>
+            </div>
+
+            <div class="div3_2_2">
+                <div class="div3_2_2_1"><span class="span3_2_2">本区其他房源</span><span class="span3_2_3"><a href="__URL__/Sale_Shouye/fn/{$data.sale_house_area}">更多>></a></span></div>
+                <div class="div3_2_2_2">
+               <div class="div3_2_2_2_1"> <span><a href="#">{$data.sale_house_bedroom}</a></span><span><a href="#">{$data.sale_house_acreage}㎡</a></span><span><a href="#">{$data.sale_house_price}万</a></span></div>
+            </div>
+            </div>
+
+            <!--/*右侧底部*/-->
+            <div class="div3_2_3">
+<div class="div3_2_3_1"><span>附近同类房源</span></div>
+            </div>
+            <ul class="faceul">
+                <li><a href="#">
+                    <img src="/public/image5/4.jpg"/>
+                    <p><span>庐阳区 - 中医学院宿舍 </span></p>
+                    <p><span>二室一厅  简装</span></p>
+                    <p style="color:red !important;"><span>120.00万</span></p>
+                </a>
+                </li>
+            </ul>
+        </div>
+    </volist>
+    </div>
+<div style="clear: both"></div>
+</div>
+</body>
+</html>

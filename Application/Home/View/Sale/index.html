@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GBK">
+    <title>个人中心-发布出售房源</title>
+    <link rel="stylesheet" type="text/css" href="CSSPATH/hfhouse.css">
+    <link rel="stylesheet" type="text/css" href="CSSPATH/Sale_self.css">
+    <script src="JSPATH/jqyery.js"></script>
+    <script src="JSPATH/Sale.js"></script>
+
+</head>
+<body>
+<div class="Sale_addData">
+    <!--导航开始-->
+    <div class="topNav">
+        <div class="tnleft">
+            <img src="IMAPATH/logo1.png" style="height: 43px;margin-left: 110px;float: left">
+            <dl class="tnleft">
+                <dd>
+                    <h3>
+                        <a href="#">房产资讯</a>
+                        <a href="#">新房</a>
+                        <a href="__APP__/Home/Index/index">二手房</a>
+                        <a href="#">家居</a>
+                        <a href="#">业住社区</a>
+                    </h3>
+                </dd>
+            </dl>
+        </div>
+        <div class="tnRight">
+            <dd>
+                <h3>
+                    <eq name="Think.session.userid" value="">
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/login" style="color: white">登录</a></h3></dd>
+                        <else/>
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="" style="color: white">{$Think.session.username}</a></h3></dd>
+                        <dd style="margin-top: 0px"><h3 style="font-size: 100%;"><a href="__APP__/Home/Index/logout" style="color: white">注销登录</a></h3></dd>
+                    </eq>
+                </h3>
+            </dd>
+        </div>
+    </div>
+    <!--导航结束-->
+    <div style="clear: both"></div>
+    <div>
+        <!--正文部分左边导航开始-->
+        <div class="f1 sideMenu">
+            <ul>
+                <li>
+                    <h3 class="menu-list">
+                        <a href="#">个人中心</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="__APP__/Home/Member/index">个人首页</a>
+                </li>
+                <li>
+                    <a href="#">我的消息</a>
+                </li>
+                <li>
+                    <a href="#">账号设置</a>
+                </li>
+                <li>
+                    <h3 class="menu-item">
+                        <a href="#">我的问答</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="#">不动产评估</a>
+                </li>
+                <li>
+                    <a href="#">律师在线</a>
+                </li>
+                <li>
+                    <h3 class="collapseMenu">
+                        <a href="#">房源管理</a>
+                    </h3>
+                </li>
+                <li>
+                    <a href="/Home/Sale/index">出售房源管理</a>
+                </li>
+                <li>
+                    <a href="/Home/Hire/index">出租房源管理</a>
+                </li>
+                <li>
+                    <a href="#">求组房源管理</a>
+                </li>
+                <li>
+                    <a href="#">委托房源管理</a>
+                </li>
+                <li>
+                    <a href="#">求购房源管理</a>
+                </li>
+            </ul>
+            <div class="tel400 gray f16">
+                <span>客服电话</span>
+                400-887-1216
+            </div>
+        </div>
+        <!--正文部分左边导航结束-->
+        <!--正文部分中间开始-->
+
+        <div class="Sale_self">
+            <div class="Sale_self_font">
+                位置：
+                <a href="__APP__/Home/Index/index">首页</a>
+                <span>></span>
+                <a href="#">房源管理</a>
+                <span>></span>
+                <a href="#">出售</a>
+            </div>
+            <hr style="margin-top: -10px;background-color: lavender">
+            <div class="Sale_self_behind">
+                <div class="Sale_self_publish"><a href="/Home/Sale/addData">发布房源</a> </div>
+                <div style="clear: both"></div>
+                <div class="Sale_self_basic" >
+                    <table >
+                        <tr>
+                            <th class="Sale_self_basic_information">房源基本信息</th>
+                            <th class="Sale_self_click">累计点击数</th>
+                            <!--<th class="Sale_self_leave">剩余天数</th>-->
+                            <th class="Sale_self_refresh">刷新时间/发布时间</th>
+                            <th class="Sale_self_monitor">房源管理</th>
+                        </tr>
+
+                        <volist name="dataI" id="row" >
+                            <tr class="index_tr">
+                                <td style="text-align: center;word-break: break-all">{$row.sale_house_address}{$row.sale_house_name}</td>
+                                <td style="text-align: center">{$row.sale_times}</td>
+                                <!--<td></td>-->
+                                <td style="text-align: center">{:date('Y-m-d H:i',$row['sale_date'])}</td>
+                                <td style="text-align: center">
+                                    <a href="del\id\{$row['sale_id']}">删除</a>
+                                    <a href="edi\id\{$row['sale_id']}">编辑</a>
+                                </td>
+                            </tr>
+                        </volist>
+                    </table>
+                </div>
+                <div style="clear: both"></div>
+                <!--<div class="Sale_self_footer">-->
+                    <!--<input type="checkbox" id="all">全选-->
+                    <!--<a href="#" class="Sale_self_del">批量删除</a>-->
+                    <!--<a href="#" class="Sale_self_ref">批量刷新</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--正文部分中间结束-->
+        <!--正文部分结束-->
+    </div>
+    <div style="clear: both"></div>
+    <!--尾部开始-->
+    <div class="bottom">
+        <div class="wrap">
+            <div class="friend_link dgray14px9" id="hutia"><b>友情链接：</b>
+                <a href="http://newhouse.letfind.com.cn/" title="福州楼盘 " target="_blank">福州楼盘</a><a href="http://sz.fangjia.com/" title="深圳房价 " target="_blank">深圳房价</a><a href="http://www.tengfun.com/" title="滕州房产网 " target="_blank">滕州房产网</a><a href="http://www.dezhong365.com" title="德众金融 " target="_blank">德众金融</a><a href="http://www.qiuxingwang.cn/ " title="球星网 " target="_blank">球星网</a><a href="http://www.xinwenquan.org" title="娱乐新闻 " target="_blank">娱乐新闻</a><a href="http://www.xkhouse.com/" title="星空地产  " target="_blank">星空地产 </a><a href="http://www.guangyuanol.cn" title="川北在线 " target="_blank">川北在线</a><a href="http://zz.mnw.cn/" title="漳州新闻网 " target="_blank">漳州新闻网</a><a href="http://newhouse.fy.ahhouse.com/5155/" title="阜阳祥源文旅城 " target="_blank">阜阳祥源文旅城</a>            </div>
+            <div class="wx clearfix">
+                <dl>
+                    <dt><img src="IMAPATH/xfh_ewm.png"></dt>
+                    <dd><p class="f16"><b>星房惠移动客户端</b></p>
+                        <p class="f12">让房子在手中转起来</p>
+                        <p><a href="https://itunes.apple.com/cn/app/id786090055" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/iphone.gif" width="71" height="24">
+                        </a>&nbsp;&nbsp;<a href="http://app.xkhouse.com/down.php" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt><img src="IMAPATH/zlyl1.gif"></dt>
+                    <dd><p class="f16"><b>左邻右里移动客户端</b></p>
+                        <p class="f12">友邻就在身边</p>
+                        <p><a href="http://nextdoors.com.cn/hfwzone.ipa" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/iphone.gif" width="71" height="24">
+                        </a>&nbsp;&nbsp;<a href="http://nextdoors.com.cn/XKFriend.apk" target="_blank" rel="nofollow">
+                            <img src="IMAPATH/android.gif" width="74" height="24"></a></p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><img src="IMAPATH/ewm.gif"></dt>
+                    <dd><p class="f16"><b>星空团官方微信</b></p>
+                        <p class="f12">手指移动，轻松掌握房产最新优惠活动</p>
+                    </dd>
+                </dl>
+                <div style="clear: both"></div>
+            </div>
+            <div class="links-inner"><a target="_blank" href="http://www.hfhouse.com/company/about.html" rel="nofollow">公司简介</a><span>|</span><a target="_blank" href="http://www.nextdoors.com.cn/main.html" rel="nofollow">左邻右里</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/ggfw.html" rel="nofollow">广告服务</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/join.html" rel="nofollow">诚聘英才</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/contact.html" rel="nofollow">联系方法</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/licheng.html" rel="nofollow">精彩历程</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/sitemap.html" rel="nofollow">网站地图</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/privacy.html" rel="nofollow">版权声明</a><span>|</span><a target="_blank" href="http://www.hfhouse.com/company/guwen.html" rel="nofollow">法律顾问</a><span>|</span><a target="_blank" href="http://aixin.xkhouse.com/" rel="nofollow">星空爱心慈善基金</a>
+            </div>
+
+            <div class="foot-copy dgray14px9">互联网经营许可证:
+                <a href="http://www.miibeian.gov.cn/" target="_blank"></a>
+                <a href="http://www.miibeian.gov.cn/" target="_blank">皖ICP备16017591号</a>
+                <a href="http://news.hfhouse.com/html/225806.html" target="_blank">广播电视节目制作经营许可证</a>
+                <a href="http://hefei.cyberpolice.cn/" target="_blank">网警</a>
+                <br>? 2000-2016合肥星空投资管理有限公司　客服电话:400-888-8888　0551-68888888　Email:421032813@qq.com </div>
+            <div class="afd_com">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="896" height="35" hspace="0" vspace="0" style="margin:0 auto 3px;">
+                    <param name="movie" value="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf">
+                    <param name="quality" value="high"><param name="wmode" value="transparent"><embed style="margin:0 auto 3px;" src="http://img2.xkhouse.com/xkhouse/ggvert/hfHouse/LKQ7L1469759795.swf" width="896" height="35" hspace="0" vspace="0" quality="high" type="application/x-shockwave-flash" wmode="transparent"></object>
+                <div id="ggbz" style="position:absolute;top:10px;right:10px;font-size:12px;color:#fff;z-index:10;background:black;line-height:1em;padding:2px;opacity:0.3">广告</div>
+            </div>
+        </div>
+    </div>
+    <!--尾部结束-->
+</div>
+</body>
+</html>
